@@ -1,0 +1,1 @@
+{"seed": 0, "seed_local_index": 0, "smiles": "CN(CO)C(=O)NCC(=O)Nc1cc(F)c(F)c(Nc2cc(N)ccc2C(F)F)c1", "pdb_id": "4JPS", "docking_score_kcal_mol": -8.494, "heavy_atom_count": 30, "ligand_efficiency": 0.2831, "formal_charge_pre_meeko": 0, "dock_sec": 16.36, "exhaustiveness": 8, "dock_timeout": 120, "timestamp": 1788468815.4066577}

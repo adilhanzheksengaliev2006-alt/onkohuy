@@ -1,0 +1,159 @@
+{
+  "test01_dataset_bias": {
+    "n_actives": 152,
+    "n_decoys": 3500,
+    "n_failed_parse": 0,
+    "per_descriptor": {
+      "heavy_atoms": {
+        "median_actives": 33.0,
+        "median_decoys": 32.0,
+        "mannwhitney_u": 317552.0,
+        "mannwhitney_p": 4.9734047252885024e-05,
+        "cliffs_delta": 0.19380451127819548,
+        "warn_large_effect": false
+      },
+      "mw": {
+        "median_actives": 457.9470000000002,
+        "median_decoys": 458.27350000000024,
+        "mannwhitney_u": 281197.0,
+        "mannwhitney_p": 0.23242501382730518,
+        "cliffs_delta": 0.05713157894736842,
+        "warn_large_effect": false
+      },
+      "logp": {
+        "median_actives": 4.8034000000000034,
+        "median_decoys": 3.0330000000000013,
+        "mannwhitney_u": 441397.5,
+        "mannwhitney_p": 3.2423478462041047e-43,
+        "cliffs_delta": 0.6593890977443609,
+        "warn_large_effect": true
+      },
+      "tpsa": {
+        "median_actives": 86.63,
+        "median_decoys": 81.67,
+        "mannwhitney_u": 295811.0,
+        "mannwhitney_p": 0.01915486810926638,
+        "cliffs_delta": 0.11207142857142857,
+        "warn_large_effect": false
+      },
+      "hbd": {
+        "median_actives": 2.0,
+        "median_decoys": 2.0,
+        "mannwhitney_u": 269699.0,
+        "mannwhitney_p": 0.757626079514016,
+        "cliffs_delta": 0.013906015037593984,
+        "warn_large_effect": false
+      },
+      "hba": {
+        "median_actives": 5.0,
+        "median_decoys": 4.0,
+        "mannwhitney_u": 330853.5,
+        "mannwhitney_p": 2.1409319056780654e-07,
+        "cliffs_delta": 0.24381015037593984,
+        "warn_large_effect": false
+      },
+      "rotb": {
+        "median_actives": 5.0,
+        "median_decoys": 6.0,
+        "mannwhitney_u": 223740.0,
+        "mannwhitney_p": 0.0008282496462394699,
+        "cliffs_delta": -0.15887218045112783,
+        "warn_large_effect": false
+      },
+      "rings": {
+        "median_actives": 5.0,
+        "median_decoys": 4.0,
+        "mannwhitney_u": 367907.5,
+        "mannwhitney_p": 9.140878798828132e-17,
+        "cliffs_delta": 0.3831109022556391,
+        "warn_large_effect": true
+      },
+      "qed": {
+        "median_actives": 0.39001598323233166,
+        "median_decoys": 0.5153758067262395,
+        "mannwhitney_u": 171024.0,
+        "mannwhitney_p": 8.448471566836769e-14,
+        "cliffs_delta": -0.35705263157894734,
+        "warn_large_effect": true
+      },
+      "fraction_csp3": {
+        "median_actives": 0.1935483870967742,
+        "median_decoys": 0.34375,
+        "mannwhitney_u": 116821.0,
+        "mannwhitney_p": 9.668375792317139e-32,
+        "cliffs_delta": -0.5608233082706767,
+        "warn_large_effect": true
+      }
+    },
+    "plot": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\BRAF\\test01_histograms.png",
+    "warn_threshold_cliffs_delta": 0.3
+  },
+  "test02_ligand_only_baseline": {
+    "n": 3652,
+    "n_scaffolds": 2792,
+    "n_folds": 5,
+    "auc_scaffold_cv": 0.9480977443609023,
+    "bedroc_scaffold_cv": 0.7283893446429164,
+    "ef1pct_scaffold_cv": 23.376955903271693,
+    "auc_warn_threshold": 0.75,
+    "warn_ligand_only_predictive": true,
+    "features_used": [
+      "mw",
+      "logp",
+      "tpsa",
+      "hbd",
+      "hba",
+      "rotb",
+      "heavy_atoms",
+      "rings",
+      "qed",
+      "fraction_csp3"
+    ],
+    "citation": "Chen et al. PLOS ONE 2019 - hidden bias in DUD-E-style benchmarks"
+  },
+  "test03_ave_bias": {
+    "n_actives": 152,
+    "n_decoys": 152,
+    "n_class_matched": 152,
+    "nn_sim_AA": 0.6789641077226548,
+    "nn_sim_AI": 0.17650743429808366,
+    "nn_sim_II": 0.2979449652247742,
+    "nn_sim_IA": 0.17508820865242924,
+    "ave_bias": 0.6253134299969161,
+    "warn_threshold": 0.2,
+    "warn_high_ave_bias": true,
+    "citation": "Wallach & Heifets, JCIM 2018 - Asymmetric Validation Embedding"
+  },
+  "test04_scaffold_bias": {
+    "n_actives_total": 152,
+    "n_actives_parsed": 152,
+    "n_unique_scaffolds": 152,
+    "largest_cluster_scaffold_smiles": "N=C1CCc2cc(-c3c[nH]nc3-c3ccncc3)ccc21",
+    "largest_cluster_fraction": 0.006578947368421052,
+    "scaffold_to_molecule_ratio": 1.0,
+    "warn_threshold": 0.3,
+    "warn_scaffold_dominance": false,
+    "top5_scaffolds": [
+      {
+        "scaffold": "N=C1CCc2cc(-c3c[nH]nc3-c3ccncc3)ccc21",
+        "count": 1
+      },
+      {
+        "scaffold": "N=C1CCc2cc(-c3cn(C4CCNCC4)nc3-c3ccncc3)ccc21",
+        "count": 1
+      },
+      {
+        "scaffold": "N=C1CCc2cc(-c3cn(C4CCCCC4)nc3-c3ccncc3)ccc21",
+        "count": 1
+      },
+      {
+        "scaffold": "N=C1CCc2cc(-c3cn(C4CCOCC4)nc3-c3ccncc3)ccc21",
+        "count": 1
+      },
+      {
+        "scaffold": "N=C1CCc2cc(-c3nc(-c4ccccc4)[nH]c3-c3ccncc3)ccc21",
+        "count": 1
+      }
+    ]
+  }
+}

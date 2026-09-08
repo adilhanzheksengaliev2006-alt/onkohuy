@@ -1,0 +1,30 @@
+{
+  "test16_posecheck": {
+    "n_files": 1,
+    "n_poses": 3,
+    "n_scored": 3,
+    "mean_clashes": 8.333333333333334,
+    "mean_strain_energy_kcal_mol": 1233.7110907855024,
+    "reference_scale_note": "~1200 ккал/моль напряжения наблюдалось в некоторых генеративных моделях (Harris et al. 2023) - ориентир, не порог",
+    "per_pose": [
+      {
+        "file": "seed1_raw.sdf",
+        "mol_idx": 0,
+        "n_clashes": 8,
+        "strain_energy_kcal_mol": 2772.773448495236
+      },
+      {
+        "file": "seed1_raw.sdf",
+        "mol_idx": 1,
+        "n_clashes": 13,
+        "strain_energy_kcal_mol": 827.9874922175303
+      },
+      {
+        "file": "seed1_raw.sdf",
+        "mol_idx": 2,
+        "n_clashes": 4,
+        "strain_energy_kcal_mol": 100.37233164374095
+      }
+    ]
+  }
+}

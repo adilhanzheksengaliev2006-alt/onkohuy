@@ -1,0 +1,79 @@
+# Протокол стадийного пайплайна контролей (18 тестов).
+# ВСЕ пороги/параметры, используемые в controls/*.py, должны читаться
+# отсюда - ничего не хардкодить в коде. Скрипт при старте печатает
+# использованные значения + hash этого файла (см. controls/protocol.py).
+
+gates:
+  redock_rmsd_max: 2.0          # Test 5 - ЕДИНСТВЕННЫЙ гейт всего пайплайна
+
+flags:
+  ligand_only_auc_warn: 0.75    # Test 2
+  ave_bias_warn: 0.20           # Test 3
+  size_effect_warn: 0.3         # Test 1 - |Cliff's delta|
+  scaffold_dominance_warn: 0.3  # Test 4 - доля крупнейшего кластера
+
+metrics:
+  bedroc_alpha: 20.0
+  bedroc_threshold: 0.20
+  test_a_prime_r2_fail: 0.5     # Test 13 - ГЛАВНЫЙ порог всего исследования
+  le_exponents: [1.0, 0.667, 0.5]   # Test 14
+  bootstrap_n: 1000
+  permutation_n: 1000
+  seed: 0
+
+docking:
+  exhaustiveness: 8
+  num_modes: 9
+  timeout_sec: 300
+  cpu: null                     # null = не передавать --cpu, пусть vina сама решает
+  n_workers: 6                  # используется в Stage 2 (тесты 9,10) - раньше там докинг шёл строго последовательно (1 воркер), из-за чего 50x6=300 и 200x2=400 вызовов vina растягивались на часы вместо заявленных 30-60 минут
+
+test09_seed_variance:
+  n_ligands: 50
+  n_ligands_smoke_test: 10      # используется при --smoke
+  seeds: [1, 2, 3, 4, 5, 6]     # договорились не опускаться ниже 6 сидов
+  exhaustiveness: 8
+
+test10_exhaustiveness:
+  n_ligands: 200
+  n_ligands_smoke_test: 10
+  exhaustiveness_low: 4
+  exhaustiveness_high: 8
+  spearman_switch_threshold: 0.95
+
+test06_cross_docking:
+  enabled_by_default: false     # требует явного --confirm от пользователя
+
+test08_decoy_site:
+  enabled_by_default: false     # требует явного --confirm и списка мишеней
+  n_decoys: 850                 # ВСЕ активные + случайные N декоев - НЕ топ по скору в реальном сайте
+                                 # (отбор по скору в правильном кармане перед тестом на неправильном
+                                 # даёт data leakage - набор заранее подкручен в пользу "и там неплохо")
+
+test16_posecheck:
+  enabled_by_default: false     # требует отдельного прогона генерации (Test B)
+
+test18:
+  min_targets: 8                # ниже этого - только диагностика, результат помечается do_not_report
+  primary_descriptor: volume     # зафиксировано ДО просмотра результатов - прямое выражение гипотезы
+  expected_sign: positive        # больше и открытее карман -> сильнее размерное смещение
+  secondary_descriptor: mean_asph_radius
+  exploratory: [drug_score, hydrophobicity_score, polarity_score, flex,
+                as_density, apolar_residue_count, polar_residue_count]
+  multiple_testing: holm         # применяется только к exploratory, не к primary/secondary
+
+# Зафиксировано 08.09.2026 после BRAF-прогона, ДО продолжения на остальных мишенях -
+# список не меняется по ходу (добавление мишени после того, как видны частичные
+# результаты - тот же post-hoc, что и выбор дескриптора в test18). Статус на дату
+# заморозки: структура подтверждена вручную для всех 11; ligands.json собран для
+# BRAF/CDK2/PIK3CA; докинг (Stage 3) завершён для BRAF/PIK3CA, частично для CDK2
+# (120-лигандный тестовый прогон, не полный).
+target_list:
+  frozen: true
+  targets: [PIK3CA, ESR1, AR, CA2, CDK2, EGFR, ABL1, PARP1, HDAC2, PPARG, BRAF]
+
+paths:
+  results_dir: "results"
+  summary_csv: "results/summary.csv"
+  runs_dir: "runs"
+  dude_dir: "dude_datasets"

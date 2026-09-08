@@ -1,0 +1,28 @@
+{
+  "gene": "BRAF",
+  "method": "post_hoc_sensitivity_after_test1_skew",
+  "n_per_active_target": 6,
+  "n_actives": 150,
+  "n_fully_matched_actives": 126,
+  "n_decoys_balanced": 777,
+  "balance_check": {
+    "mw_cliffs_delta": 0.11905619905619906,
+    "logp_cliffs_delta": 0.15632775632775633
+  },
+  "test11_balanced": {
+    "vina": {
+      "bedroc": 0.7343531545511698,
+      "ef1pct": 6.18,
+      "n": 927
+    },
+    "gnina_cnn_score": {
+      "bedroc": 0.7514069555097401,
+      "ef1pct": 5.256296296296297,
+      "n": 887
+    }
+  },
+  "test13_balanced": {
+    "r2_vina_heavy_atoms": 0.09858224563911411,
+    "n": 927
+  }
+}

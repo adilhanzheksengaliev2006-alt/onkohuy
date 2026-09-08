@@ -1,0 +1,47 @@
+{
+  "test15_posebusters": {
+    "n_poses": 9,
+    "n_all_checks_pass": 9,
+    "pass_rate": 1.0,
+    "checks": [],
+    "violation_counts_by_check": {},
+    "per_pose": [
+      {
+        "pose_idx": 0,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 1,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 2,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 3,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 4,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 5,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 6,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 7,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      },
+      {
+        "pose_idx": 8,
+        "error": "check_identity() missing 1 required positional argument: 'mol_true'"
+      }
+    ]
+  }
+}

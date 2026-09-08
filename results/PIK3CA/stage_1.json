@@ -1,0 +1,26 @@
+{
+  "test05_redock": {
+    "gene": "PIK3CA",
+    "pdb_id": "4JPS",
+    "ligand_chembl_id": "CHEMBL2396661",
+    "docking_score_kcal_mol": -10.21,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.788420175822303,
+      2.0953374580399786,
+      3.156059468737168,
+      2.463246779940207,
+      10.328877249984911,
+      1.6480549057270368,
+      2.3833033974690054,
+      2.550115958520924,
+      3.1135906693015944
+    ],
+    "rmsd_top1": 0.788420175822303,
+    "rmsd_top3": 0.788420175822303,
+    "rmsd_best_of_all": 0.788420175822303,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

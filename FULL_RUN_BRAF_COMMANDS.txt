@@ -1,0 +1,67 @@
+ПОЛНЫЙ ПРОГОН BRAF — 10-15 часов, ВСЕ 18 ТЕСТОВ (Test A + Test B + Test N)
+Обновлено после ночной сессии багфиксов (06-07.09.2026):
+  - test06: было сломано (сопоставление остатков по номеру -> RMSD белка 26A) - исправлено на
+    выравнивание последовательностей (RMSD белка теперь ~1.3A на PIK3CA)
+  - test08/09/10: не передавали --cpu воркерам -> oversubscription при параллельном запуске
+    (Test 8 на PIK3CA: 3/13 успешных из-за этого) - исправлено, теперь как в основном phase_dock
+  - test08/09/10: одна зависшая молекула роняла весь multiprocessing.Pool - исправлено (try/except)
+  - Test B (генерация) падает (Segmentation fault), если считается ОДНОВРЕМЕННО с тяжёлым
+    докингом (нехватка RAM на 8ГБ машине) - работает нормально соло, поэтому здесь идёт
+    ПОСЛЕДНИМ шагом, когда весь докинг уже закончен и CPU/RAM свободны.
+
+КРИТИЧНО: команды строго ПОСЛЕДОВАТЕЛЬНО, ничего не запускать параллельно/во второй
+консоли одновременно - именно параллельный запуск проверок вчера вызвал часть багов
+(oversubscription CPU, нехватка RAM). Один прогон - одна консоль - до конца, по порядку.
+
+Запускать из директории: C:\Users\adilh\Desktop\onco-target-explorer
+PowerShell, одним блоком:
+
+# --- ШАГ 1: собрать датасет (3500 декоев + все ~152 активных), сек ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" -c "import sys; sys.path.insert(0,'.'); import run_test_a as rta; rta.phase_build_dude('BRAF', 'braf', n_actives_cap=999, n_decoys_cap=3500)"
+
+# --- ШАГ 2: ОСНОВНОЙ ДОКИНГ Vina+gnina, ~3650 лигандов - САМЫЙ ДОЛГИЙ ШАГ (~9.5-10 часов) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" run_test_a.py dock BRAF 6 300
+
+# --- ШАГ 3: Stage 0 (тесты 1-4, ~30 сек) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\run_controls.py BRAF --stage 0
+
+# --- ШАГ 4: Stage 1 (тест 5, ГЕЙТ, ~2 мин) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\run_controls.py BRAF --stage 1
+
+# --- ШАГ 5: Stage 2 (тесты 9-10, теперь с --cpu фиксом, ~40-60 мин) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\run_controls.py BRAF --stage 2
+
+# --- ШАГ 6: Stage 3 (тесты 7,11-14 = Test N + Test A' + screening/ranking power, ~1 мин) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\run_controls.py BRAF --stage 3
+
+# --- ШАГ 7: Stage 4 (тест 15, PoseBusters, ~30 сек) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\run_controls.py BRAF --stage 4
+
+# --- ШАГ 8: Stage 7 (тест 17 fpocket + тест 18 сводный, ~2 мин) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\run_controls.py BRAF --stage 7
+
+# --- ШАГ 9: Test 6 cross-docking, альт-структура 6P3D/понатиниб (исправлено и проверено ночью, ~10 мин) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\test06_cross_docking.py BRAF --confirm --alt-pdb "6P3D:resname_lig=0LI:chembl=CHEMBL1171837"
+
+# --- ШАГ 10: Test 8 decoy-site, топ-20% по консенсус-рангу (~730 лигандов, ~2 часа, теперь с --cpu фиксом) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\test08_decoy_site.py --confirm --genes BRAF
+
+# --- ШАГ 11: Test B генерация, DiffSBDD, 8 сидов x 30 = 240 молекул, ~40 мин.
+#     ДРУГОЙ python env (diffsbdd, не molgen) - это специально, две разные среды.
+#     Идёт ПОСЛЕДНИМ докинг-шагом сознательно: весь Vina-докинг к этому моменту уже
+#     закончен, CPU/RAM свободны - вчера падал именно от нехватки RAM при параллельной
+#     нагрузке, отдельно от докинга работает надёжно. ---
+1..8 | ForEach-Object {
+  & "C:\Users\adilh\miniconda3\envs\diffsbdd\python.exe" DiffSBDD\generate_smiles_seeded.py `
+    DiffSBDD\checkpoints\crossdocked_fullatom_cond.ckpt `
+    structures\5C9C.pdb A:900 `
+    --seed $_ --n_samples 30 --batch_size 4 `
+    --outfile "runs\test_b_BRAF\seed$($_)_smiles.json" `
+    --sdf_outfile "runs\test_b_BRAF\poses\seed$($_)_raw.sdf"
+}
+
+# --- ШАГ 12: Test 16 PoseCheck на сырых позах Test B (~2 мин) ---
+& "C:\Users\adilh\miniconda3\envs\molgen\python.exe" controls\test16_posecheck.py BRAF --poses-dir runs\test_b_BRAF\poses --protein structures\5C9C_clean.pdb
+
+# Итого ожидаемо: ~13-14 часов (запас до 15)
+# Результаты: results\BRAF\stage_*.json, results\summary.csv, results\BRAF\stage_6.json (Test 16)

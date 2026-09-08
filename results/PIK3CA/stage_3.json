@@ -1,0 +1,195 @@
+{
+  "test07_label_shuffle": {
+    "n_active": 97,
+    "n_decoy": 1360,
+    "ratio_decoy_per_active": 14.02061855670103,
+    "reference_ratio": 31,
+    "reference_bedroc_alpha20": 0.068,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "bedroc_observed": 0.23237977260333334,
+        "bedroc_shuffled_mean": 0.08925669157686045,
+        "bedroc_shuffled_std": 0.024971886413134112,
+        "bedroc_shuffled_p95": 0.13003969930614473,
+        "bedroc_shuffled_p99": 0.1562633282233048,
+        "permutation_p_value": 0.0,
+        "n_permutations": 1000,
+        "plot": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\PIK3CA\\test07_shuffle_docking_score_kcal_mol.png"
+      }
+    }
+  },
+  "test11_screening_power": {
+    "n_total": 2504,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "label": "Vina",
+        "sign_convention": "ascending (raw)",
+        "n": 1457,
+        "bedroc": 0.23237977260333334,
+        "bedroc_ci95_lo": 0.18094993036345577,
+        "bedroc_ci95_hi": 0.2825358588115063,
+        "auc_roc": 0.7937689508793209,
+        "EF_1%": 0.0,
+        "EF_5%": 2.2633808784070046,
+        "EF_10%": 3.0864284705550062
+      },
+      "gnina_cnn_score": {
+        "label": "gnina CNNscore",
+        "sign_convention": "descending (negated for calc)",
+        "n": 1351,
+        "bedroc": 0.4034597354263623,
+        "bedroc_ci95_lo": 0.31014719828766724,
+        "bedroc_ci95_hi": 0.4877801027770745,
+        "auc_roc": 0.7325738284367737,
+        "EF_1%": 5.813253012048193,
+        "EF_5%": 5.744861800141743,
+        "EF_10%": 4.188961729270021
+      },
+      "gnina_cnn_affinity": {
+        "label": "gnina CNNaffinity",
+        "sign_convention": "descending (negated for calc)",
+        "n": 1351,
+        "bedroc": 0.6038718382584125,
+        "bedroc_ci95_lo": 0.5110256782198861,
+        "bedroc_ci95_hi": 0.6789723023507367,
+        "auc_roc": 0.8485899433696917,
+        "EF_1%": 15.114457831325302,
+        "EF_5%": 7.420446491849752,
+        "EF_10%": 5.505492558469171
+      }
+    },
+    "bedroc_alpha": 20.0
+  },
+  "test12_ranking_power": {
+    "n_actives_with_pchembl": 100,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "label": "Vina",
+        "n": 97,
+        "spearman": -0.31567750681361945,
+        "spearman_p": 0.0016343341429177246,
+        "kendall": -0.21491847480967263,
+        "kendall_p": 0.0023169074428089627
+      },
+      "gnina_cnn_affinity": {
+        "label": "gnina CNNaffinity",
+        "n": 83,
+        "spearman": 0.36795832430701997,
+        "spearman_p": 0.0006208849971813126,
+        "kendall": 0.24994828063288152,
+        "kendall_p": 0.001036634775368236
+      }
+    },
+    "plots": {
+      "docking_score_kcal_mol": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\PIK3CA\\test12_scatter_docking_score_kcal_mol.png",
+      "gnina_cnn_affinity": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\PIK3CA\\test12_scatter_gnina_cnn_affinity.png"
+    }
+  },
+  "test13_size_bias": {
+    "r2_fail_threshold": 0.5,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "label": "Vina",
+        "splits": {
+          "all_combined": {
+            "n": 1457,
+            "slope": -0.02500565368656334,
+            "intercept": -7.334685251280367,
+            "r2": 0.03579146582646753,
+            "slope_p_value": 3.313113682586986e-13,
+            "size_bias_fail": false
+          },
+          "actives_only": {
+            "n": 97,
+            "slope": -0.03727331300744531,
+            "intercept": -7.78684144122899,
+            "r2": 0.11408520474344375,
+            "slope_p_value": 0.0007157169114339588,
+            "size_bias_fail": false
+          },
+          "inactives_only": {
+            "n": 1360,
+            "slope": -0.022433029269241525,
+            "intercept": -7.360735702021753,
+            "r2": 0.030066022410890514,
+            "slope_p_value": 1.2149398366728938e-10,
+            "size_bias_fail": false
+          }
+        },
+        "partial_correlation": {
+          "n": 1457,
+          "partial_corr_label_score_given_size": -0.23705994827092702,
+          "p_value": 4.642485912050545e-20
+        }
+      },
+      "gnina_cnn_affinity": {
+        "label": "gnina CNNaffinity",
+        "splits": {
+          "all_combined": {
+            "n": 1351,
+            "slope": 0.02681043618279319,
+            "intercept": 5.396758964800985,
+            "r2": 0.06074840622989719,
+            "slope_p_value": 3.816536911738263e-20,
+            "size_bias_fail": false
+          },
+          "actives_only": {
+            "n": 83,
+            "slope": 0.008562489676342641,
+            "intercept": 7.1929336170562665,
+            "r2": 0.003672760640927475,
+            "slope_p_value": 0.5862696269215251,
+            "size_bias_fail": false
+          },
+          "inactives_only": {
+            "n": 1268,
+            "slope": 0.02394518796492918,
+            "intercept": 5.424756569100529,
+            "r2": 0.05732580235968188,
+            "slope_p_value": 5.456413054113518e-18,
+            "size_bias_fail": false
+          }
+        },
+        "partial_correlation": {
+          "n": 1351,
+          "partial_corr_label_score_given_size": 0.3391912006385046,
+          "p_value": 1.0010007883741299e-37
+        }
+      }
+    },
+    "plots": {
+      "docking_score_kcal_mol": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\PIK3CA\\test13_scatter_docking_score_kcal_mol.png",
+      "gnina_cnn_affinity": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\PIK3CA\\test13_scatter_gnina_cnn_affinity.png"
+    }
+  },
+  "test14_ligand_efficiency": {
+    "n": 1457,
+    "exponents": [
+      1.0,
+      0.667,
+      0.5
+    ],
+    "by_exponent": {
+      "raw_score": {
+        "bedroc": 0.23237977260333334,
+        "ef1pct": 0.0,
+        "auc": 0.7937613705275924
+      },
+      "n=1.0": {
+        "bedroc": 0.06030148200405461,
+        "ef1pct": 2.002749140893471,
+        "auc": 0.5735180412371134
+      },
+      "n=0.667": {
+        "bedroc": 0.10059694029370257,
+        "ef1pct": 2.002749140893471,
+        "auc": 0.6307686476652516
+      },
+      "n=0.5": {
+        "bedroc": 0.1420527719840351,
+        "ef1pct": 2.002749140893471,
+        "auc": 0.6789190418435416
+      }
+    }
+  }
+}

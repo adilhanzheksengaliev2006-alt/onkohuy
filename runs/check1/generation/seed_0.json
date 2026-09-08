@@ -1,0 +1,19 @@
+{
+  "seed": 0,
+  "checkpoint": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\DiffSBDD\\checkpoints\\crossdocked_fullatom_cond.ckpt",
+  "checkpoint_dataset": "crossdock",
+  "checkpoint_pocket_representation": "full-atom",
+  "timesteps": null,
+  "batch_size": 3,
+  "peak_vram_mb": 90.8,
+  "n_requested": 3,
+  "n_generated_raw": 1,
+  "n_none_or_unparseable": 0,
+  "n_valid_smiles": 1,
+  "n_unusual_ring_size": 0,
+  "model_load_sec": 1.5,
+  "generation_sec": 29.6,
+  "smiles": [
+    "CN(CO)C(=O)NCC(=O)Nc1cc(F)c(F)c(Nc2cc(N)ccc2C(F)F)c1"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "gene": "PIK3CA",
+  "n_total": 1581,
+  "n_scored": 1331,
+  "test_a": {
+    "n_active": 97,
+    "n_total": 1331,
+    "ra_active_fraction": 0.07287753568745305,
+    "bedroc_alpha": 20.0,
+    "bedroc_observed": 0.2661435504206503,
+    "bedroc_random_baseline_empirical_mean": 0.09342181582068239,
+    "bedroc_random_baseline_empirical_std": 0.026132552905219063,
+    "bedroc_bootstrap_ci_95_lo": 0.20333516163163975,
+    "bedroc_bootstrap_ci_95_hi": 0.32722698975971615,
+    "permutation_p_value": 0.0,
+    "n_permutations": 1000,
+    "n_bootstrap": 1000,
+    "EF_1%": 0.9801178203240059,
+    "EF_5%": 3.0720110786274812,
+    "EF_10%": 3.0720110786274812,
+    "auc_roc": 0.7920934351451161
+  },
+  "test_n_summary": {
+    "n_permutations": 1000,
+    "bedroc_shuffled_mean": 0.09342181582068239,
+    "bedroc_shuffled_std": 0.026132552905219063,
+    "bedroc_shuffled_min": 0.019634312502442592,
+    "bedroc_shuffled_max": 0.17531049270579818
+  },
+  "test_a_prime": {
+    "n": 1331,
+    "slope": -0.02432718231410217,
+    "intercept": -7.385033737990525,
+    "r2": 0.03191442435675129,
+    "threshold": 0.3,
+    "size_bias_detected": false
+  }
+}

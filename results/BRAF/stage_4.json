@@ -1,0 +1,5 @@
+{
+  "test15_posebusters": {
+    "error": "НЕТ СОХРАНЁННЫХ ПОЗ для BRAF: C:\\Users\\adilh\\Desktop\\onco-target-explorer\\runs\\redock_BRAF\\docked_out_multi.pdbqt не существует. Сначала запусти controls/test05_redock.py BRAF - основной Test A/funnel пайплайн координаты поз вообще не сохраняет, только скор."
+  }
+}

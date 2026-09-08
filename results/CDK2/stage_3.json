@@ -1,0 +1,174 @@
+{
+  "test07_label_shuffle": {
+    "n_active": 20,
+    "n_decoy": 94,
+    "ratio_decoy_per_active": 4.7,
+    "reference_ratio": 31,
+    "reference_bedroc_alpha20": 0.068,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "bedroc_observed": 0.10681835209130663,
+        "bedroc_shuffled_mean": 0.17659443613882805,
+        "bedroc_shuffled_std": 0.11017641576671125,
+        "bedroc_shuffled_p95": 0.37811058894837735,
+        "bedroc_shuffled_p99": 0.47022139748318104,
+        "permutation_p_value": 0.687,
+        "n_permutations": 1000,
+        "plot": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\CDK2\\test07_shuffle_docking_score_kcal_mol.png"
+      }
+    }
+  },
+  "test11_screening_power": {
+    "n_total": 120,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "label": "Vina",
+        "sign_convention": "ascending (raw)",
+        "n": 114,
+        "bedroc": 0.10681835209130663,
+        "bedroc_ci95_lo": 0.006201385886399799,
+        "bedroc_ci95_hi": 0.2567963381158974,
+        "auc_roc": 0.6303191489361701,
+        "EF_1%": 0.0,
+        "EF_5%": 0.95,
+        "EF_10%": 0.475
+      },
+      "gnina_cnn_score": {
+        "label": "gnina CNNscore",
+        "sign_convention": "descending (negated for calc)",
+        "n": 113,
+        "bedroc": 0.6646287753493848,
+        "bedroc_ci95_lo": 0.4062239443737286,
+        "bedroc_ci95_hi": 0.817476625204961,
+        "auc_roc": 0.6301075268817206,
+        "EF_1%": 5.65,
+        "EF_5%": 3.7666666666666666,
+        "EF_10%": 3.7666666666666666
+      },
+      "gnina_cnn_affinity": {
+        "label": "gnina CNNaffinity",
+        "sign_convention": "descending (negated for calc)",
+        "n": 113,
+        "bedroc": 0.6309574447690031,
+        "bedroc_ci95_lo": 0.42781028287482703,
+        "bedroc_ci95_hi": 0.74808894541147,
+        "auc_roc": 0.7596774193548396,
+        "EF_1%": 2.825,
+        "EF_5%": 4.708333333333334,
+        "EF_10%": 3.2958333333333334
+      }
+    },
+    "bedroc_alpha": 20.0
+  },
+  "test12_ranking_power": {
+    "error": "недостаточно активных с pChEMBL (n=0, нужно >=5)",
+    "n": 0
+  },
+  "test13_size_bias": {
+    "r2_fail_threshold": 0.5,
+    "by_score": {
+      "docking_score_kcal_mol": {
+        "label": "Vina",
+        "splits": {
+          "all_combined": {
+            "n": 114,
+            "slope": -0.18871578025606717,
+            "intercept": -3.8208956096732942,
+            "r2": 0.5888453437567551,
+            "slope_p_value": 2.3606506400078085e-23,
+            "size_bias_fail": true
+          },
+          "actives_only": {
+            "n": 20,
+            "slope": -0.10221666666666673,
+            "intercept": -5.961983333333327,
+            "r2": 0.29126804062198985,
+            "slope_p_value": 0.014046906606664977,
+            "size_bias_fail": false
+          },
+          "inactives_only": {
+            "n": 94,
+            "slope": -0.2139514385315966,
+            "intercept": -3.2790300664967247,
+            "r2": 0.6369596630471452,
+            "slope_p_value": 5.917512285650757e-22,
+            "size_bias_fail": true
+          }
+        },
+        "partial_correlation": {
+          "n": 114,
+          "partial_corr_label_score_given_size": 0.19672122826083296,
+          "p_value": 0.035922368070784486
+        }
+      },
+      "gnina_cnn_affinity": {
+        "label": "gnina CNNaffinity",
+        "splits": {
+          "all_combined": {
+            "n": 113,
+            "slope": 0.10911694672275085,
+            "intercept": 2.6713230954963656,
+            "r2": 0.23255048512847198,
+            "slope_p_value": 6.359517335594253e-08,
+            "size_bias_fail": false
+          },
+          "actives_only": {
+            "n": 20,
+            "slope": 0.12129729166666686,
+            "intercept": 2.7834658333333238,
+            "r2": 0.14800984449274313,
+            "slope_p_value": 0.09394950808601699,
+            "size_bias_fail": false
+          },
+          "inactives_only": {
+            "n": 93,
+            "slope": 0.0855721737113593,
+            "intercept": 3.1343798645489276,
+            "r2": 0.1685483176672964,
+            "slope_p_value": 4.363462921457733e-05,
+            "size_bias_fail": false
+          }
+        },
+        "partial_correlation": {
+          "n": 113,
+          "partial_corr_label_score_given_size": 0.25337693255511073,
+          "p_value": 0.006772614902708819
+        }
+      }
+    },
+    "plots": {
+      "docking_score_kcal_mol": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\CDK2\\test13_scatter_docking_score_kcal_mol.png",
+      "gnina_cnn_affinity": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\CDK2\\test13_scatter_gnina_cnn_affinity.png"
+    }
+  },
+  "test14_ligand_efficiency": {
+    "n": 114,
+    "exponents": [
+      1.0,
+      0.667,
+      0.5
+    ],
+    "by_exponent": {
+      "raw_score": {
+        "bedroc": 0.10681835209130663,
+        "ef1pct": 0.0,
+        "auc": 0.6305851063829787
+      },
+      "n=1.0": {
+        "bedroc": 0.0011349605573773701,
+        "ef1pct": 0.0,
+        "auc": 0.21117021276595743
+      },
+      "n=0.667": {
+        "bedroc": 0.015584524730596615,
+        "ef1pct": 0.0,
+        "auc": 0.2765957446808511
+      },
+      "n=0.5": {
+        "bedroc": 0.017676997578475434,
+        "ef1pct": 0.0,
+        "auc": 0.3888297872340426
+      }
+    }
+  }
+}

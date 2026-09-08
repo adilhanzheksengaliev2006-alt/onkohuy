@@ -1,0 +1,11 @@
+{
+  "n_targets": 3,
+  "targets": [
+    "BRAF",
+    "CDK2",
+    "PIK3CA"
+  ],
+  "status": "smoke_test",
+  "do_not_report": true,
+  "error": "n=3 мишеней < test18.min_targets=8 - результат НЕ репрезентативен, НЕ переносить ни в одну сводную таблицу/отчёт (см. status/do_not_report). Числа сохранены только для диагностики кода."
+}

@@ -1,0 +1,18 @@
+# Тяжёлые/бинарные/внешние данные - не нужны для показа кода и результатов
+module_generative/
+DiffSBDD/
+structures/
+dude_datasets/
+tools/
+cancer_data.db
+__pycache__/
+*.pyc
+*.pdbqt
+*.pdb
+*.sdf
+*.ckpt
+*.log
+runs/*/dock_tmp/
+runs/redock_*/
+runs/crossdock_*/
+runs/test_b_*/poses/

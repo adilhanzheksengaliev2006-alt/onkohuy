@@ -1,0 +1,79 @@
+{
+  "PIK3CA": {
+    "pdb_id": "4JPS",
+    "confirmed_by": "user + Claude, 2026-08-20",
+    "ligand_name": "ALPELISIB",
+    "ligand_chembl_id": "CHEMBL2396661",
+    "note": "ATP-binding catalytic pocket of PI3K-alpha, co-crystallized with alpelisib (ligand code 1LT). InChIKey of 1LT (STUWGJZDJHPWGZ-LBPRGKRZSA-N) exactly matches alpelisib. Auto-search previously picked 9CMK (RAS-binding domain, unrelated molecular-glue pocket) — confirmed wrong and replaced with this manually-verified entry."
+  },
+  "ESR1": {
+    "pdb_id": "6SBO",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "AMCENESTRANT",
+    "ligand_chembl_id": "CHEMBL4475463",
+    "note": "Estrogen receptor alpha LBD, mutant L536S, resolution 1.48A. Ligand chemically confirmed via RCSB InChI match to a known ChEMBL mechanism-of-action inhibitor (find_pdb_structure_matching_known_ligand), not just any hetero group."
+  },
+  "AR": {
+    "pdb_id": "4OHA",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "FLUTAMIDE",
+    "ligand_chembl_id": "CHEMBL806",
+    "note": "Androgen receptor LBD, T877A mutant, bound with co-regulator peptide, resolution 1.42A. Note: this entry has an extra peptide chain (co-regulator) besides the receptor and small-molecule ligand - watch for this during receptor prep (strip_ligands_and_waters should only remove the small-molecule ligand/water, not the peptide chain)."
+  },
+  "CA2": {
+    "pdb_id": "3HS4",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "ACETAZOLAMIDE",
+    "ligand_chembl_id": "CHEMBL20",
+    "note": "Human carbonic anhydrase II, resolution 1.1A. Not a kinase - zinc metalloenzyme active site."
+  },
+  "CDK2": {
+    "pdb_id": "8FP0",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "SELICICLIB",
+    "ligand_chembl_id": "CHEMBL14762",
+    "note": "CDK2 ATP-binding kinase pocket, resolution 1.6A. Ternary complex title mentions a second ligand (TW8672) - only seliciclib chemically confirmed via known-inhibitor match, verify only one small-molecule ligand ends up in the stripped receptor's box."
+  },
+  "EGFR": {
+    "pdb_id": "3POZ",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "TAK-285",
+    "ligand_chembl_id": "CHEMBL1614725",
+    "note": "EGFR kinase domain ATP-binding pocket, resolution 1.5A."
+  },
+  "ABL1": {
+    "pdb_id": "3QRJ",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "REBASTINIB",
+    "ligand_chembl_id": "CHEMBL1738757",
+    "note": "ABL1 kinase domain, T315I mutant (imatinib-resistant clone), resolution 1.82A."
+  },
+  "PARP1": {
+    "pdb_id": "7KK5",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "NIRAPARIB",
+    "ligand_chembl_id": "CHEMBL1094636",
+    "note": "PARP1 catalytic domain, resolution 1.7A. Not a kinase - DNA repair enzyme (synthetic lethality with BRCA mutations)."
+  },
+  "HDAC2": {
+    "pdb_id": "4LXZ",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "VORINOSTAT",
+    "ligand_chembl_id": "CHEMBL98",
+    "note": "HDAC2, resolution 1.85A. Not a kinase - epigenetic enzyme (histone deacetylase), catalytic site typically involves a Zn2+ ion, watch strip_ligands_and_waters doesn't remove a catalytically-relevant metal ion along with crystallization additives."
+  },
+  "PPARG": {
+    "pdb_id": "7E0A",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "SAROGLITAZAR",
+    "ligand_chembl_id": "CHEMBL4297530",
+    "note": "PPARgamma ligand-binding domain monomer (not the RXR heterodimer form seen in some other PPARG PDB entries), resolution 1.771A. Not a kinase, not oncology - nuclear receptor, diabetes target."
+  },
+  "BRAF": {
+    "pdb_id": "5C9C",
+    "confirmed_by": "user + Claude, 2026-09-05",
+    "ligand_name": "LY-3009120",
+    "ligand_chembl_id": "CHEMBL3577124",
+    "note": "BRAF(V600E) kinase domain, resolution 2.7A. TRYING THIS after 3OG7 (vemurafenib, 2.45A) FAILED redock RMSD (3.094A, > 2.0A threshold) - 3OG7 kept in git history/memory, not reused. If 5C9C also fails, next candidates in order: 4RZV (vemurafenib, R509H mutant, 2.994A), 5CT7 (RAF-265, 3.17A)."
+  }
+}

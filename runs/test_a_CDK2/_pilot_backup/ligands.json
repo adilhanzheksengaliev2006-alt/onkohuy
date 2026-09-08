@@ -1,0 +1,165 @@
+{
+  "gene": "CDK2",
+  "source": "DUD-E",
+  "dude_code": "CDK2",
+  "n_actives": 30,
+  "n_decoys": 1,
+  "achieved_ratio": 0.03333333333333333,
+  "ligands": [
+    {
+      "chembl_id": "CHEMBL360520",
+      "smiles": "NC(=O)c2nn(c1ccc(S(N)(=O)=O)cc1)c4c2ccc3[nH]ncc34",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL363607",
+      "smiles": "Cc3ccc(F)c(C(=O)n2nc(Nc1ccc(S(N)(=O)=O)cc1)nc2C)c3F",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL526110",
+      "smiles": "O=N(=O)c4cccc(Nc3nccc(c1cnn2ncccc12)n3)c4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL317703",
+      "smiles": "NS(=O)(=O)c3ccc(Nc2cc(c1ccc(N(=O)=O)cc1)[nH]n2)cc3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL321517",
+      "smiles": "Nc3ccc(c2cc(Nc1ccc(S(N)(=O)=O)cc1)[nH]n2)cc3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL162",
+      "smiles": "CN[C@@H]1CC5O[C@@](C)([C@@H]1OC)n7c2ccccc2c8c3CNC(=O)c3c6c4ccccc4n5c6c78",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL363130",
+      "smiles": "Cc1ccsc1C(=O)n3nc(Nc2ccc(S(N)(=O)=O)cc2)nc3N",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL476577",
+      "smiles": "CC(C)n1c(C)ncc1c4nc(Nc3ccc(N2CC(NC(C)=O)C2)cc3)ncc4F",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL261720",
+      "smiles": "Nc2nc(Nc1ccc(S(N)(=O)=O)cc1)nn2C(=S)Nc3c(F)cccc3F",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL343996",
+      "smiles": "OCCOCCNS(=O)(=O)c4ccc(/N=C/c2c(O)[nH]c3ccc1ncsc1c23)cc4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL52387",
+      "smiles": "CCC(CO)Nc3nc(NCc1ccccc1)c2ncn(C(C)C)c2n3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL328406",
+      "smiles": "CC(C)(C)c3cnc(CSc2cnc(Nc1ccncc1)s2)o3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL478409",
+      "smiles": "COCCNS(=O)(=O)c3ccc(Nc2nccc(c1cnc(C)n1C(C)C)n2)cc3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL509406",
+      "smiles": "CC(C)n1c(C)ncc1c4nc(Nc3ccc(C(=O)NC2CCN(C)CC2)c(F)c3)ncc4F",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL460086",
+      "smiles": "CC(C)n1c(C)ncc1c5ccnc(Nc4ccc(C(=O)N3CC[C@H](NC2CC2)C3)cc4)n5",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL559513",
+      "smiles": "CN5CCN(c4cccc(Nc3ncc2CCc1c(C(N)=O)nn(C)c1c2n3)c4)CC5",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL1171950",
+      "smiles": "NCCCn4nc(C(N)=O)c3CCc2cnc(Nc1ccccc1)nc2c34",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL318999",
+      "smiles": "Nc3nc(Nc1ccc(S(N)(=O)=O)cc1)nc(OCC2CCCCC2)c3N=O",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL87472",
+      "smiles": "CC(C)Cc2cccc3[nH]c(O)c(N=Nc1ccc(S(N)(=O)=O)cc1)c23",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL411224",
+      "smiles": "CC(C)Cc2cccc3[nH]c(=O)/c(=N\\Nc1ccc(S(N)(=O)=O)cc1)c23",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL344579",
+      "smiles": "NS(=O)(=O)c4ccc(/N=C/c2c(O)[nH]c3ccc1ncccc1c23)cc4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL445945",
+      "smiles": "NS(=O)(=O)c4ccc(N/C=c2\\c(=O)[nH]c3ccc1ncccc1c23)cc4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL343151",
+      "smiles": "NS(=O)(=O)c4ccc(N=Nc2c(O)[nH]c3ccc1ncccc1c23)cc4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL409892",
+      "smiles": "NS(=O)(=O)c4ccc(N/N=c2\\c(=O)[nH]c3ccc1ncccc1c23)cc4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL337325",
+      "smiles": "COc1cccc(OC)c1CNC(=O)c4ccc3[nH]c(O)c(N=Nc2ccc(S(N)(=O)=O)cc2)c3c4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL271136",
+      "smiles": "COc1cccc(OC)c1CNC(=O)c4ccc3[nH]c(=O)/c(=N\\Nc2ccc(S(N)(=O)=O)cc2)c3c4",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL1087073",
+      "smiles": "O/N=c3\\c(=c1\\c(=O)[nH]c2ccc(N(=O)=O)cc12)[nH]c4ccc(F)cc34",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL434257",
+      "smiles": "CC(C)CC(=O)c3ccc2[nH]c(O)c(\\C=N\\c1ccc(S(N)(=O)=O)cc1)c2c3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL429142",
+      "smiles": "CC(C)CC(=O)c3ccc2[nH]c(=O)/c(=C\\Nc1ccc(S(N)(=O)=O)cc1)c2c3",
+      "label": 1
+    },
+    {
+      "chembl_id": "CHEMBL355631",
+      "smiles": "COc1cc[nH]c1\\C=c3/c(=O)[nH]c4ccc(F)c(C#C[C@@H]2CCCN2)c34",
+      "label": 1
+    },
+    {
+      "chembl_id": "ZINCC02780389",
+      "smiles": "Cc1c(cn(n1)C)C(=O)Nc2c(c3c(s2)CCC3)C(=O)N",
+      "label": 0
+    }
+  ]
+}

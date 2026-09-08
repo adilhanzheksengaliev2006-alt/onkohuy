@@ -1,0 +1,37 @@
+{
+  "seeds": {
+    "0": {
+      "status": "done",
+      "n_valid_smiles": 16,
+      "generation_sec": 238.5,
+      "checkpoint": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\DiffSBDD\\checkpoints\\crossdocked_fullatom_cond.ckpt",
+      "timesteps": null
+    },
+    "1": {
+      "status": "done",
+      "n_valid_smiles": 17,
+      "generation_sec": 232.9,
+      "checkpoint": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\DiffSBDD\\checkpoints\\crossdocked_fullatom_cond.ckpt",
+      "timesteps": null
+    }
+  },
+  "docking": {
+    "n_docked": 33,
+    "n_ok": 32,
+    "n_fail": 1,
+    "total": 33
+  },
+  "started_at": 1788497389.8846972,
+  "manifest": {
+    "seeds": [
+      0,
+      1
+    ],
+    "n_per_seed": 30
+  },
+  "gene": "PIK3CA",
+  "pdb_id": "4JPS",
+  "receptor_pdbqt": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\structures\\4JPS_receptor.pdbqt",
+  "updated_at": 1788498555.468986,
+  "control_docking_passed": true
+}

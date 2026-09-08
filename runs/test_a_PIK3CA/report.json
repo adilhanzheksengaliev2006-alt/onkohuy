@@ -1,0 +1,57 @@
+{
+  "gene": "PIK3CA",
+  "n_total": 1581,
+  "n_scored": 1457,
+  "test_a": {
+    "n_active": 97,
+    "n_total": 1457,
+    "ra_active_fraction": 0.06657515442690459,
+    "bedroc_alpha": 20.0,
+    "bedroc_observed": 0.2323137736659643,
+    "bedroc_random_baseline_empirical_mean": 0.09103115078416124,
+    "bedroc_random_baseline_empirical_std": 0.026814306540391335,
+    "bedroc_bootstrap_ci_95_lo": 0.18094993036345577,
+    "bedroc_bootstrap_ci_95_hi": 0.2825358588115063,
+    "permutation_p_value": 0.0,
+    "n_permutations": 1000,
+    "n_bootstrap": 1000,
+    "EF_1%": 0.0,
+    "EF_5%": 2.2633808784070046,
+    "EF_10%": 3.0864284705550062,
+    "auc_roc": 0.7937613705275925
+  },
+  "test_n_summary": {
+    "n_permutations": 1000,
+    "bedroc_shuffled_mean": 0.09103115078416124,
+    "bedroc_shuffled_std": 0.026814306540391335,
+    "bedroc_shuffled_min": 0.024437410235571614,
+    "bedroc_shuffled_max": 0.18338233258850764
+  },
+  "test_a_prime": {
+    "n": 1457,
+    "slope": -0.025005653686562962,
+    "intercept": -7.3346852512803595,
+    "r2": 0.03579146582646753,
+    "threshold": 0.3,
+    "size_bias_detected": false
+  },
+  "test_a_gnina_cnn_score": {
+    "n_active": 83,
+    "n_total": 1351,
+    "ra_active_fraction": 0.0614359733530718,
+    "bedroc_alpha": 20.0,
+    "bedroc_observed": 0.4035271762236454,
+    "bedroc_random_baseline_empirical_mean": 0.08769771874481762,
+    "bedroc_random_baseline_empirical_std": 0.027409837611782544,
+    "bedroc_bootstrap_ci_95_lo": 0.31014719828766724,
+    "bedroc_bootstrap_ci_95_hi": 0.4877801027770745,
+    "permutation_p_value": 0.0,
+    "n_permutations": 1000,
+    "n_bootstrap": 1000,
+    "EF_1%": 5.813253012048193,
+    "EF_5%": 5.744861800141743,
+    "EF_10%": 4.188961729270021,
+    "auc_roc": 0.7325928318954033
+  },
+  "n_gnina_scored": 1351
+}

@@ -1,0 +1,159 @@
+{
+  "test01_dataset_bias": {
+    "n_actives": 20,
+    "n_decoys": 100,
+    "n_failed_parse": 0,
+    "per_descriptor": {
+      "heavy_atoms": {
+        "median_actives": 27.5,
+        "median_decoys": 21.0,
+        "mannwhitney_u": 1459.0,
+        "mannwhitney_p": 0.00115691724074069,
+        "cliffs_delta": 0.459,
+        "warn_large_effect": true
+      },
+      "mw": {
+        "median_actives": 392.4535000000002,
+        "median_decoys": 339.38750000000005,
+        "mannwhitney_u": 1501.0,
+        "mannwhitney_p": 0.00042426238648481427,
+        "cliffs_delta": 0.501,
+        "warn_large_effect": true
+      },
+      "logp": {
+        "median_actives": 2.6639000000000004,
+        "median_decoys": 1.8433999999999997,
+        "mannwhitney_u": 1399.0,
+        "mannwhitney_p": 0.005013013839825593,
+        "cliffs_delta": 0.399,
+        "warn_large_effect": true
+      },
+      "tpsa": {
+        "median_actives": 116.81,
+        "median_decoys": 91.565,
+        "mannwhitney_u": 1513.0,
+        "mannwhitney_p": 0.0003070112234896868,
+        "cliffs_delta": 0.513,
+        "warn_large_effect": true
+      },
+      "hbd": {
+        "median_actives": 3.0,
+        "median_decoys": 2.0,
+        "mannwhitney_u": 1466.5,
+        "mannwhitney_p": 1.5157435098521698e-05,
+        "cliffs_delta": 0.4665,
+        "warn_large_effect": true
+      },
+      "hba": {
+        "median_actives": 6.0,
+        "median_decoys": 4.0,
+        "mannwhitney_u": 1724.5,
+        "mannwhitney_p": 1.0781247072608143e-07,
+        "cliffs_delta": 0.7245,
+        "warn_large_effect": true
+      },
+      "rotb": {
+        "median_actives": 5.0,
+        "median_decoys": 3.5,
+        "mannwhitney_u": 1702.5,
+        "mannwhitney_p": 1.3444847182648719e-07,
+        "cliffs_delta": 0.7025,
+        "warn_large_effect": true
+      },
+      "rings": {
+        "median_actives": 3.0,
+        "median_decoys": 3.0,
+        "mannwhitney_u": 1295.5,
+        "mannwhitney_p": 0.030988108100068523,
+        "cliffs_delta": 0.2955,
+        "warn_large_effect": false
+      },
+      "qed": {
+        "median_actives": 0.5742243485468741,
+        "median_decoys": 0.7686150700139126,
+        "mannwhitney_u": 306.0,
+        "mannwhitney_p": 1.041894241489691e-06,
+        "cliffs_delta": -0.694,
+        "warn_large_effect": true
+      },
+      "fraction_csp3": {
+        "median_actives": 0.24269005847953215,
+        "median_decoys": 0.3550420168067227,
+        "mannwhitney_u": 589.0,
+        "mannwhitney_p": 0.0038306753158660243,
+        "cliffs_delta": -0.411,
+        "warn_large_effect": true
+      }
+    },
+    "plot": "C:\\Users\\adilh\\Desktop\\onco-target-explorer\\results\\CDK2\\test01_histograms.png",
+    "warn_threshold_cliffs_delta": 0.3
+  },
+  "test02_ligand_only_baseline": {
+    "n": 120,
+    "n_scaffolds": 111,
+    "n_folds": 5,
+    "auc_scaffold_cv": 0.9945,
+    "bedroc_scaffold_cv": 0.9878269367354793,
+    "ef1pct_scaffold_cv": 6.0,
+    "auc_warn_threshold": 0.75,
+    "warn_ligand_only_predictive": true,
+    "features_used": [
+      "mw",
+      "logp",
+      "tpsa",
+      "hbd",
+      "hba",
+      "rotb",
+      "heavy_atoms",
+      "rings",
+      "qed",
+      "fraction_csp3"
+    ],
+    "citation": "Chen et al. PLOS ONE 2019 - hidden bias in DUD-E-style benchmarks"
+  },
+  "test03_ave_bias": {
+    "n_actives": 20,
+    "n_decoys": 20,
+    "n_class_matched": 20,
+    "nn_sim_AA": 0.403987357187089,
+    "nn_sim_AI": 0.17449265837948627,
+    "nn_sim_II": 0.2250471299986591,
+    "nn_sim_IA": 0.16475119157583157,
+    "ave_bias": 0.2897906372304303,
+    "warn_threshold": 0.2,
+    "warn_high_ave_bias": true,
+    "citation": "Wallach & Heifets, JCIM 2018 - Asymmetric Validation Embedding"
+  },
+  "test04_scaffold_bias": {
+    "n_actives_total": 20,
+    "n_actives_parsed": 20,
+    "n_unique_scaffolds": 20,
+    "largest_cluster_scaffold_smiles": "c1ccc(-n2ncc3ccc4[nH]ncc4c32)cc1",
+    "largest_cluster_fraction": 0.05,
+    "scaffold_to_molecule_ratio": 1.0,
+    "warn_threshold": 0.3,
+    "warn_scaffold_dominance": false,
+    "top5_scaffolds": [
+      {
+        "scaffold": "c1ccc(-n2ncc3ccc4[nH]ncc4c32)cc1",
+        "count": 1
+      },
+      {
+        "scaffold": "O=C(c1ccccc1)n1cnc(Nc2ccccc2)n1",
+        "count": 1
+      },
+      {
+        "scaffold": "c1ccc(Nc2nccc(-c3cnn4ncccc34)n2)cc1",
+        "count": 1
+      },
+      {
+        "scaffold": "c1ccc(Nc2cc(-c3ccccc3)[nH]n2)cc1",
+        "count": 1
+      },
+      {
+        "scaffold": "c1ccc(Nc2cc(-c3ccccc3)n[nH]2)cc1",
+        "count": 1
+      }
+    ]
+  }
+}

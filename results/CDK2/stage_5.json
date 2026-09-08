@@ -1,0 +1,124 @@
+{
+  "test08_decoy_site": {
+    "gene": "CDK2",
+    "top_fraction": 0.2,
+    "decoy_pocket_cav_id": 1,
+    "decoy_pocket_dist_to_known_site": 14.268123939527497,
+    "n_docked": 22,
+    "bedroc_decoy_site": 0.004102460351313807,
+    "ef1pct_decoy_site": 0.0,
+    "per_ligand": [
+      {
+        "chembl_id": "CHEMBL526110",
+        "label": 1,
+        "decoy_site_score": -7.82
+      },
+      {
+        "chembl_id": "ZINCC19961512",
+        "label": 0,
+        "decoy_site_score": -6.215
+      },
+      {
+        "chembl_id": "ZINCC49472689",
+        "label": 0,
+        "decoy_site_score": -10.63
+      },
+      {
+        "chembl_id": "CHEMBL363607",
+        "label": 1,
+        "decoy_site_score": -8.678
+      },
+      {
+        "chembl_id": "ZINCC44975382",
+        "label": 0,
+        "decoy_site_score": -8.947
+      },
+      {
+        "chembl_id": "CHEMBL360520",
+        "label": 1,
+        "decoy_site_score": -7.78
+      },
+      {
+        "chembl_id": "ZINCC22021872",
+        "label": 0,
+        "decoy_site_score": -5.917
+      },
+      {
+        "chembl_id": "CHEMBL509406",
+        "label": 1,
+        "decoy_site_score": -8.661
+      },
+      {
+        "chembl_id": "ZINCC09520381",
+        "label": 0,
+        "decoy_site_score": -9.231
+      },
+      {
+        "chembl_id": "ZINCC35306561",
+        "label": 0,
+        "decoy_site_score": -9.496
+      },
+      {
+        "chembl_id": "ZINCC43771918",
+        "label": 0,
+        "decoy_site_score": -6.504
+      },
+      {
+        "chembl_id": "CHEMBL411224",
+        "label": 1,
+        "decoy_site_score": -8.35
+      },
+      {
+        "chembl_id": "ZINCC05496204",
+        "label": 0,
+        "decoy_site_score": -7.287
+      },
+      {
+        "chembl_id": "ZINCC36437914",
+        "label": 0,
+        "decoy_site_score": -8.589
+      },
+      {
+        "chembl_id": "ZINCC24945331",
+        "label": 0,
+        "decoy_site_score": -10.84
+      },
+      {
+        "chembl_id": "CHEMBL476577",
+        "label": 1,
+        "decoy_site_score": -5.918
+      },
+      {
+        "chembl_id": "ZINCC41547960",
+        "label": 0,
+        "decoy_site_score": -9.683
+      },
+      {
+        "chembl_id": "ZINCC40739534",
+        "label": 0,
+        "decoy_site_score": -7.739
+      },
+      {
+        "chembl_id": "CHEMBL460086",
+        "label": 1,
+        "decoy_site_score": -8.68
+      },
+      {
+        "chembl_id": "ZINCC19462100",
+        "label": 0,
+        "decoy_site_score": -6.812
+      },
+      {
+        "chembl_id": "ZINCC41907749",
+        "label": 0,
+        "decoy_site_score": -7.148
+      },
+      {
+        "chembl_id": "CHEMBL87472",
+        "label": 1,
+        "decoy_site_score": -6.757
+      }
+    ],
+    "interpretation": "если bedroc_decoy_site тоже высокий среди ТОП-кандидатов - их 'сигнал' может не быть специфичен к правильному карману"
+  }
+}

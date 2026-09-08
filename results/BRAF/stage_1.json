@@ -1,0 +1,21 @@
+{
+  "test05_redock": {
+    "gene": "BRAF",
+    "pdb_id": "5C9C",
+    "ligand_chembl_id": "CHEMBL3577124",
+    "status": "pass",
+    "docking_score_kcal_mol": -11.74,
+    "n_poses": 3,
+    "rmsd_per_pose": [
+      1.0404840161783886,
+      2.36913293183615,
+      11.103466901353302
+    ],
+    "rmsd_top1": 1.0404840161783886,
+    "rmsd_top3": 1.0404840161783886,
+    "rmsd_best_of_all": 1.0404840161783886,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}
