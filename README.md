@@ -35,23 +35,54 @@ score~heavy_atoms) зависит от геометрии кармана свя�
 Все пороги и параметры — в `config/protocol.yaml`, ничего не захардкожено в
 коде.
 
-## Структура репозитория
+## Архитектура
 
+### Поток данных по стадиям
+
+```mermaid
+flowchart TD
+    A["confirmed_structures.json\nручное подтверждение структуры"] --> B["run_test_a.py build\nDUD-E или ChEMBL-live"]
+    B --> C["runs/test_a_GENE/ligands.json\nSMILES + label"]
+    C --> S0["Stage 0: тесты 1-4\ndataset bias, ligand-only, AVE, scaffold"]
+    C --> D["run_test_a.py dock\nVina + gnina CNN"]
+    D --> E["runs/test_a_GENE/results.jsonl\nскор на лиганд"]
+    E --> S1["Stage 1: Test 5 - ЕДИНСТВЕННЫЙ ГЕЙТ\nredock RMSD < 2.0A"]
+    S1 -- pass --> S2["Stage 2: тесты 9-10\nseed noise, exhaustiveness"]
+    S1 -- pass --> S3["Stage 3: тесты 7,11-14\nBEDROC, Test A' (главный), LE"]
+    S1 -- fail/error --> STOP["мишень остановлена\n(единственная законная причина)"]
+    E --> S4["Stage 4: Test 15\nPoseBusters"]
+    F["run_fpocket.py (WSL)"] --> G["runs/fpocket_GENE.json\nдескрипторы кармана"]
+    G --> S7a["Stage 7: Test 17\nпокет -> summary.csv"]
+    S3 --> S7b["Stage 7: Test 18 - ГЛАВНЫЙ ВЫВОД\nR^2(bias) ~ геометрия кармана"]
+    S7a --> S7b
+    E --> S5a["Test 6 (по команде)\ncross-dock на альт. структуру"]
+    E --> S5b["Test 8 (по команде)\nдокинг в ложный карман"]
+    H["DiffSBDD generate\nTest B"] --> I["runs/test_b_GENE/poses/*.sdf\nсырые позы"]
+    I --> S6["Test 16 (по команде)\nPoseCheck: клэши + напряжение"]
+    S7b --> J["results/summary.csv\nодна строка на мишень"]
 ```
-controls/                  18 тестов, по одному файлу на тест + оркестратор
-  run_controls.py            запуск стадий: python controls/run_controls.py GENE --stage N
-  test01..test18_*.py        реализация каждого теста
-  protocol.py                общая инфраструктура (конфиг, resume, сохранение)
-config/protocol.yaml       все пороги/параметры
-run_test_a.py               основной скрининг-пайплайн (Test A): build/dock/analyze/funnel
-dock_existing_candidates.py ядро докинга (Vina + опционально gnina CNN-рескоринг)
-run_redock.py               базовая redock-валидация
-run_fpocket.py               дескрипторы кармана через fpocket (WSL)
-module_generative/          генеративный цикл (не входит в 18-тестовый протокол)
-DiffSBDD/                    генерация лигандов (Test B) - клонированный внешний проект, не в репо
-results/<GENE>/stage_N.json результаты по стадиям на мишень
-results/summary.csv          сводная таблица по всем мишеням (для Test 18)
-```
+
+### Кто за что отвечает
+
+| Файл / модуль | Роль |
+|---|---|
+| `confirmed_structures.json` | Реестр из 11 мишеней: PDB ID, лиганд, кто и когда подтвердил |
+| `config/protocol.yaml` | ВСЕ пороги/параметры пайплайна — ничего не захардкожено в коде |
+| `gene_target_utils.py` | Поиск ChEMBL target ID по гену, парсинг активного сайта из PDB |
+| `run_test_a.py` | Основной скрининг: build (сбор SMILES) → dock (Vina+gnina) → analyze → funnel (доуточнение топ-кандидатов) |
+| `dock_existing_candidates.py` | Ядро самого докинга: подготовка лиганда, вызов vina.exe, gnina CNN-рескоринг, таймауты/устойчивость к зависаниям |
+| `run_redock.py` | Первая, более простая версия redock-валидации (координаты из свежего SMILES, не кристалла) |
+| `run_fpocket.py` | Запуск fpocket через WSL, сопоставление найденного кармана с известным активным сайтом |
+| `bedroc_calibration.py` | Общая статистика: BEDROC/EF/AUC, эмпирический random-baseline (label-shuffle), bootstrap CI |
+| `benchmark_parallel_docking.py` | `cpu_per_worker()` — расчёт `--cpu` на воркер, чтобы несколько параллельных Vina не боролись за все потоки процессора |
+| `controls/protocol.py` | Общая инфраструктура тестов: чтение конфига, hash конфига, сохранение/пропуск уже посчитанных стадий (resume) |
+| `controls/run_controls.py` | Оркестратор: `python controls/run_controls.py GENE --stage N` — запускает нужную стадию, знает про гейт |
+| `controls/test01..test18_*.py` | Каждый файл — один тест из протокола, независимо запускаемый |
+| `controls/balanced_sensitivity.py` | Post-hoc: пересчёт метрик на logP/MW-сбалансированной подвыборке декоев без нового докинга |
+| `DiffSBDD/` (внешний, не в репо) | Генеративная модель для Test B — генерирует сырые 3D-позы лигандов в карман |
+| `module_generative/` | Отдельный итеративный цикл генерации+докинга+ADMET-фильтрации — не часть 18-тестового протокола, самостоятельное направление работы |
+| `results/<GENE>/stage_N.json` | Результат каждой стадии на мишень, читается/дополняется при повторных запусках |
+| `results/summary.csv` | Одна строка на мишень — вход для Test 18 (главного вывода) |
 
 ## Текущий статус (на 08.09.2026)
 
