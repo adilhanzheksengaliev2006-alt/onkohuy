@@ -1,7 +1,7 @@
 # Onco-Target-Explorer
 
-Скачай `onco-target-explorer.zip`, распакуй в любую папку и запусти `START.bat`
-(двойной клик) из распакованной папки.
+Скачай **[onco-target-explorer.zip](https://github.com/adilhanzheksengaliev2006-alt/onkohuy/releases/download/v1.0-launcher/onco-target-explorer.zip)**,
+распакуй в любую папку и запусти `START.bat` (двойной клик) из распакованной папки.
 
 ## Что нужно на компьютере
 - Windows
