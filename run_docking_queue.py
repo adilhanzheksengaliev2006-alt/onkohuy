@@ -26,10 +26,12 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "controls"))
 import run_test_a as rta  # noqa: E402
+import protocol  # noqa: E402
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-N_WORKERS = 6  # текущая машина - тот же безопасный конфиг, что весь вечер
+N_WORKERS, _cpu_preview = protocol.get_n_workers_and_cpu()  # автоопределение по железу + 80%-бюджету, не захардкожено
 
 
 def gate_status(gene):

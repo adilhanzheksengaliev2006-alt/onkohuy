@@ -423,7 +423,7 @@ def phase_dock(gene, n_workers, timeout=None, gnina=True):
 
     workdir = os.path.join(d, "dock_tmp")
     os.makedirs(workdir, exist_ok=True)
-    cpu = cpu_per_worker(n_workers)
+    cpu = cpu_per_worker(n_workers, budget_fraction=_load_protocol_yaml().get("docking", {}).get("resource_budget_fraction"))
     effective_timeout = timeout if timeout is not None else DOCK_TIMEOUT
     print(f"[dock] воркеров: {n_workers}, --cpu на процесс: {cpu if cpu else 'не ограничено'}, "
           f"exhaustiveness={EXHAUSTIVENESS}, timeout={effective_timeout}с, gnina-рескоринг: {gnina}")
@@ -547,7 +547,7 @@ def phase_funnel(gene, n_workers, top_fraction=FUNNEL_TOP_FRACTION,
 
     workdir = os.path.join(d, "funnel_dock_tmp")
     os.makedirs(workdir, exist_ok=True)
-    cpu = cpu_per_worker(n_workers)
+    cpu = cpu_per_worker(n_workers, budget_fraction=_load_protocol_yaml().get("docking", {}).get("resource_budget_fraction"))
     # выше exhaustiveness -> дольше на лиганд, чем в основной фазе dock -
     # без явного timeout берём с ещё большим запасом (было 600, тоже
     # часто не хватало на exhaustiveness=32 - см. 231/270 успеха с

@@ -91,6 +91,27 @@ def cfg_get(*path, default=None):
     return node if node is not None else default
 
 
+def get_n_workers_and_cpu():
+    """Единая точка правды для (n_workers, cpu_per_worker) по ВСЕМУ
+    проекту - раньше n_workers было захардкожено =6 в трёх разных
+    местах (config default, run_docking_queue.py) под машину
+    разработки (16 логических потоков); на другой машине это было бы
+    либо недогрузкой, либо превышением бюджета ресурсов. Если
+    docking.n_workers в конфиге задан явно (не null) - используется
+    он (ручное переопределение), иначе - автоопределение по
+    docking.resource_budget_fraction от реального числа ядер этой
+    машины."""
+    from benchmark_parallel_docking import auto_n_workers, cpu_per_worker
+    cfg = load_config()
+    n_workers = cfg.get("docking", {}).get("n_workers")
+    budget = cfg.get("docking", {}).get("resource_budget_fraction", 0.8)
+    threads_per_worker = cfg.get("docking", {}).get("threads_per_worker", 2)
+    if n_workers is None:
+        n_workers = auto_n_workers(budget_fraction=budget, threads_per_worker=threads_per_worker)
+    cpu = cpu_per_worker(n_workers, budget_fraction=budget)
+    return n_workers, cpu
+
+
 def runs_dir(gene):
     cfg = load_config()
     return os.path.join(BASE_DIR, cfg["paths"]["runs_dir"], f"test_a_{gene}")

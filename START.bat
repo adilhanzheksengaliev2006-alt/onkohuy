@@ -54,7 +54,18 @@ if errorlevel 1 (
 )
 
 echo.
-echo [2/3] Проверка офлайн-готовности мишеней...
+echo [2/4] Проверка видеокарты/драйвера (для gnina CNN-рескоринга)...
+python check_gpu_driver.py
+if errorlevel 2 (
+    echo   Драйвер старый - см. рекомендацию выше. Продолжаю без остановки:
+    echo   Vina-докинг это не блокирует, только gnina-часть может не заработать.
+)
+if errorlevel 1 if not errorlevel 2 (
+    echo   Видеокарты NVIDIA не найдено - продолжаю, будет работать только Vina.
+)
+
+echo.
+echo [3/4] Проверка офлайн-готовности мишеней...
 python check_offline_readiness.py
 if errorlevel 1 (
     echo.
@@ -64,7 +75,7 @@ if errorlevel 1 (
 )
 
 echo.
-echo [3/3] Запуск главной очереди докинга (Vina, resume-safe)...
+echo [4/4] Запуск главной очереди докинга (Vina, resume-safe)...
 echo Это будет работать долго - можно закрывать/открывать это окно,
 echo прогресс не потеряется (сохраняется после каждого лиганда).
 echo Без отдельно настроенного WSL2+gnina докинг всё равно идёт (Vina),

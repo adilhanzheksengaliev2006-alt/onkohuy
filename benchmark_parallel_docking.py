@@ -102,7 +102,24 @@ def check_control():
     return False
 
 
-def cpu_per_worker(n_workers, reserved=2):
+def auto_n_workers(budget_fraction=0.8, threads_per_worker=2):
+    """Число воркеров, подобранное под ЭТУ КОНКРЕТНУЮ машину - не
+    захардкожено (было =6, верно только для машины разработки на 16
+    логических потоках; на машине с другим числом ядер либо
+    недогружало бы CPU, либо превышало бы заданный бюджет ресурсов).
+
+    budget_fraction: не занимать больше этой доли логических ядер -
+    оставляет запас, чтобы машиной можно было пользоваться параллельно
+    с многодневным фоновым докингом."""
+    total_threads = multiprocessing.cpu_count()
+    usable = max(1, int(total_threads * budget_fraction))
+    n_workers = max(1, usable // threads_per_worker)
+    print(f"[auto_n_workers] {total_threads} логических ядер, бюджет {budget_fraction*100:.0f}% "
+          f"= {usable} потоков, {threads_per_worker} потока/воркер -> {n_workers} воркеров")
+    return n_workers
+
+
+def cpu_per_worker(n_workers, reserved=2, budget_fraction=None):
     """Vina без --cpu забирает ВСЕ доступные потоки на процесс - при
     n_workers>1 это даёт oversubscription (N процессов x все потоки),
     что на практике и обнаружилось: эффективность падала с 65% (2
@@ -110,10 +127,21 @@ def cpu_per_worker(n_workers, reserved=2):
     таймаут. Для n_workers=1 сознательно возвращаем None (не передаём
     --cpu) - это поведение сегодняшнего последовательного пайплайна,
     и baseline фазы должен ему соответствовать 1:1 для честного
-    сравнения, а не быть искусственно замедленным."""
+    сравнения, а не быть искусственно замедленным.
+
+    budget_fraction, если задан, ЗАМЕНЯЕТ фиксированный reserved на
+    процентный бюджет (напр. 0.8 = не больше 80% ядер суммарно на все
+    воркеры) - reserved=2 был откалиброван под машину разработки (16
+    логических потоков, 2 из них в резерв = 87.5% используется), на
+    машине с другим числом ядер фиксированное число резерва даёт
+    другой процент - для переносимости на новое железо нужен процент,
+    не абсолютное число."""
     if n_workers <= 1:
         return None
-    usable = max(multiprocessing.cpu_count() - reserved, n_workers)
+    if budget_fraction is not None:
+        usable = max(int(multiprocessing.cpu_count() * budget_fraction), n_workers)
+    else:
+        usable = max(multiprocessing.cpu_count() - reserved, n_workers)
     return max(1, usable // n_workers)
 
 
