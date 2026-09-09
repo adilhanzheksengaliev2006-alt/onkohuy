@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "FGFR1",
+    "pdb_id": "3C4F",
+    "ligand_chembl_id": "CHEMBL1231606",
+    "status": "pass",
+    "docking_score_kcal_mol": -9.963,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.3467717041625602,
+      1.907507548699456,
+      6.663331662080517,
+      6.407454878832375,
+      6.806396512459766,
+      2.5755482395570395,
+      6.548667512812214,
+      5.663185559951691,
+      4.94403174150931
+    ],
+    "rmsd_top1": 0.3467717041625602,
+    "rmsd_top3": 0.3467717041625602,
+    "rmsd_best_of_all": 0.3467717041625602,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

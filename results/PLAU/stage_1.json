@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PLAU",
+    "pdb_id": "1SQT",
+    "ligand_chembl_id": "CHEMBL321944",
+    "status": "pass",
+    "docking_score_kcal_mol": -8.421,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.9662952612763474,
+      6.390457103844669,
+      6.088664019007844,
+      6.496927120918342,
+      7.125798488529725,
+      5.254644218005635,
+      6.92822086427974,
+      2.315839433289524,
+      7.403599828646358
+    ],
+    "rmsd_top1": 0.9662952612763474,
+    "rmsd_top3": 0.9662952612763474,
+    "rmsd_best_of_all": 0.9662952612763474,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

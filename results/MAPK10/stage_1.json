@@ -1,0 +1,20 @@
+{
+  "test05_redock": {
+    "gene": "MAPK10",
+    "pdb_id": "2ZDT",
+    "ligand_chembl_id": "CHEMBL259554",
+    "status": "pass",
+    "docking_score_kcal_mol": -10.51,
+    "n_poses": 2,
+    "rmsd_per_pose": [
+      0.3213291218814272,
+      1.333730225639836
+    ],
+    "rmsd_top1": 0.3213291218814272,
+    "rmsd_top3": 0.3213291218814272,
+    "rmsd_best_of_all": 0.3213291218814272,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

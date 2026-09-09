@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "F7",
+    "pdb_id": "1W7X",
+    "ligand_chembl_id": "CHEMBL178616",
+    "status": "fail",
+    "docking_score_kcal_mol": -9.581,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      7.444610594941944,
+      0.7898283719296421,
+      7.747939519503364,
+      1.846582966610396,
+      2.3839129874745684,
+      7.8462834507188175,
+      4.544637375979474,
+      3.2409724755072578,
+      7.625987097487436
+    ],
+    "rmsd_top1": 7.444610594941944,
+    "rmsd_top3": 0.7898283719296421,
+    "rmsd_best_of_all": 0.7898283719296421,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

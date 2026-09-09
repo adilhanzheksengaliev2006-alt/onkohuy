@@ -90,14 +90,10 @@ def run(gene, force=False):
     try:
         confirmed = rr.load_confirmed(gene)
         pdb_id = confirmed["pdb_id"]
-        ligand_chembl_id = confirmed["ligand_chembl_id"]
+        ligand_chembl_id = confirmed.get("ligand_chembl_id")
         print(f"[test05] {gene}: {pdb_id}, лиганд {confirmed.get('ligand_name')} ({ligand_chembl_id})")
 
-        nc = rr.get_chembl_new_client()
-        rec = nc.molecule.get(ligand_chembl_id)
-        smiles = rec.get("molecule_structures", {}).get("canonical_smiles")
-        if not smiles:
-            raise RuntimeError("не удалось получить SMILES лиганда из ChEMBL")
+        smiles = protocol.fetch_ligand_smiles(ligand_chembl_id, confirmed.get("ligand_name"))
 
         struct_dir = os.path.join(protocol.BASE_DIR, "structures")
         original_pdb = os.path.join(struct_dir, f"{pdb_id}.pdb")

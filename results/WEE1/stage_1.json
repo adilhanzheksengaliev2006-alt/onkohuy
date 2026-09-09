@@ -1,0 +1,23 @@
+{
+  "test05_redock": {
+    "gene": "WEE1",
+    "pdb_id": "3BIZ",
+    "ligand_chembl_id": "CHEMBL410261",
+    "status": "pass",
+    "docking_score_kcal_mol": -11.38,
+    "n_poses": 5,
+    "rmsd_per_pose": [
+      1.5799800187681614,
+      1.9392120600712057,
+      1.7255844647997456,
+      3.7874777117207903,
+      3.412745234735997
+    ],
+    "rmsd_top1": 1.5799800187681614,
+    "rmsd_top3": 1.5799800187681614,
+    "rmsd_best_of_all": 1.5799800187681614,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

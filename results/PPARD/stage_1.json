@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PPARD",
+    "pdb_id": "2ZNP",
+    "ligand_chembl_id": "CHEMBL375471",
+    "status": "pass",
+    "docking_score_kcal_mol": -10.94,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      1.092103444491473,
+      6.097085030110009,
+      8.472685879234435,
+      8.22844156453342,
+      6.468000002193527,
+      8.230889962709696,
+      9.205399738688323,
+      8.492638214792034,
+      6.615166748226687
+    ],
+    "rmsd_top1": 1.092103444491473,
+    "rmsd_top3": 1.092103444491473,
+    "rmsd_best_of_all": 1.092103444491473,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

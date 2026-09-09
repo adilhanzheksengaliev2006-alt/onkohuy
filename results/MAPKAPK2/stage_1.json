@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "MAPKAPK2",
+    "pdb_id": "3M2W",
+    "ligand_chembl_id": "CHEMBL1233942",
+    "status": "pass",
+    "docking_score_kcal_mol": -9.054,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      1.478054477531848,
+      0.7794834866041879,
+      7.647588927519043,
+      3.9659449192027756,
+      5.797789653511137,
+      2.1678751605676156,
+      4.5993432002713694,
+      6.7845237388242285,
+      7.676491695496452
+    ],
+    "rmsd_top1": 1.478054477531848,
+    "rmsd_top3": 0.7794834866041879,
+    "rmsd_best_of_all": 0.7794834866041879,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

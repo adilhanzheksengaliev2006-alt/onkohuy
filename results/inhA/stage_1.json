@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "inhA",
+    "pdb_id": "4TRO",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -10.09,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      11.945989815944323,
+      11.871378363839245,
+      11.212206884630055,
+      11.835800761797096,
+      11.721780108119614,
+      4.424333207425723,
+      11.145432600639209,
+      12.000015064858859,
+      4.608286791378214
+    ],
+    "rmsd_top1": 11.945989815944323,
+    "rmsd_top3": 11.212206884630055,
+    "rmsd_best_of_all": 4.424333207425723,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

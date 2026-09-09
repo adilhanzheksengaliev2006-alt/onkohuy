@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "FKBP1A",
+    "pdb_id": "1J4H",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -7.643,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      6.5172805678849075,
+      7.588113915692099,
+      7.514031375957047,
+      7.162349431474716,
+      5.369302673302527,
+      5.624271272341629,
+      5.808470006683449,
+      6.640376534387441,
+      6.669489478279138
+    ],
+    "rmsd_top1": 6.5172805678849075,
+    "rmsd_top3": 6.5172805678849075,
+    "rmsd_best_of_all": 5.369302673302527,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

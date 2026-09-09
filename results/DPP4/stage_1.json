@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "DPP4",
+    "pdb_id": "2I78",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -11.04,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      9.689374463797844,
+      9.663958913779432,
+      8.507427443730709,
+      3.2779517604524493,
+      4.749039159413145,
+      8.346838027887364,
+      5.714240484174786,
+      9.778659386934521,
+      3.4801038292999826
+    ],
+    "rmsd_top1": 9.689374463797844,
+    "rmsd_top3": 8.507427443730709,
+    "rmsd_best_of_all": 3.2779517604524493,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

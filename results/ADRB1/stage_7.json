@@ -1,0 +1,22 @@
+{
+  "test17_pocket_descriptors": {
+    "gene": "ADRB1",
+    "cav_id": 84,
+    "dist_to_known_site": 2.177139603499153,
+    "volume": 891.8275,
+    "drug_score": 0.0634,
+    "hydrophobicity_score": 37.5217,
+    "polarity_score": 14,
+    "flex": 0.2894,
+    "mean_asph_radius": 4.072,
+    "as_density": 6.2655,
+    "a0_apol_surface": 164.2374,
+    "a0_pol_surface": 96.5862,
+    "af_apol_surface": 103.2126,
+    "af_pol_surface": 73.0937,
+    "apolar_residue_count": 5,
+    "polar_residue_count": 18,
+    "n_pockets_total": 99,
+    "residue_classification_note": "эвристическая (apolar={ala,val,leu,ile,met,phe,trp,pro,gly}, остальное=polar) - не единственно верная"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "NA",
+    "pdb_id": "1B9V",
+    "ligand_chembl_id": "CHEMBL307189",
+    "status": "pass",
+    "docking_score_kcal_mol": -7.561,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.8075754139142256,
+      5.527527807029665,
+      5.479147412337759,
+      2.138076261686335,
+      4.815477777165563,
+      5.046153850930883,
+      5.840033435079435,
+      5.914774260813526,
+      4.781185923648638
+    ],
+    "rmsd_top1": 0.8075754139142256,
+    "rmsd_top3": 0.8075754139142256,
+    "rmsd_best_of_all": 0.8075754139142256,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

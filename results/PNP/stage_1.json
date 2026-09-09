@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PNP",
+    "pdb_id": "3BGS",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -8.035,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.7196357579946318,
+      1.5797831267942486,
+      6.822871306257774,
+      6.83533300632786,
+      6.399309534248951,
+      6.491818806042311,
+      3.5184252248372383,
+      6.277950672334705,
+      5.795974287354105
+    ],
+    "rmsd_top1": 2.7196357579946318,
+    "rmsd_top3": 1.5797831267942486,
+    "rmsd_best_of_all": 1.5797831267942486,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

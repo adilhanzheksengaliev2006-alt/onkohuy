@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "ROCK1",
+    "pdb_id": "2ETR",
+    "ligand_chembl_id": "CHEMBL559147",
+    "status": "fail",
+    "docking_score_kcal_mol": -6.762,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.576815389194363,
+      3.506688869031236,
+      3.7905730223454004,
+      6.372399413926605,
+      7.232946399413053,
+      7.112165057841599,
+      7.292782748029269,
+      3.2622463482797737,
+      7.4090403260727635
+    ],
+    "rmsd_top1": 2.576815389194363,
+    "rmsd_top3": 2.576815389194363,
+    "rmsd_best_of_all": 2.576815389194363,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

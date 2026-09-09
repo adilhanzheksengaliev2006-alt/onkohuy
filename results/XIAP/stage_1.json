@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "XIAP",
+    "pdb_id": "3HL5",
+    "ligand_chembl_id": "CHEMBL1230673",
+    "status": "fail",
+    "docking_score_kcal_mol": -7.305,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      8.160774126256953,
+      3.631191635894104,
+      4.360006046536497,
+      7.947235280656711,
+      8.037368901399514,
+      3.709710095214791,
+      4.213613774998881,
+      6.10951678114378,
+      5.368882300729232
+    ],
+    "rmsd_top1": 8.160774126256953,
+    "rmsd_top3": 3.631191635894104,
+    "rmsd_best_of_all": 3.631191635894104,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

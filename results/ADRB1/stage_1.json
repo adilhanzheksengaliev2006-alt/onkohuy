@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "ADRB1",
+    "pdb_id": "2VT4",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -8.779,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.5381097321626204,
+      2.156239689104735,
+      6.156323721674918,
+      6.563186352255643,
+      6.736625726485028,
+      7.9305278600957605,
+      6.49394697546189,
+      6.575392224577964,
+      2.6408500623115843
+    ],
+    "rmsd_top1": 0.5381097321626204,
+    "rmsd_top3": 0.5381097321626204,
+    "rmsd_best_of_all": 0.5381097321626204,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "IGF1R",
+    "pdb_id": "2OJ9",
+    "ligand_chembl_id": "CHEMBL397666",
+    "status": "fail",
+    "docking_score_kcal_mol": -9.309,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      7.606284894952186,
+      3.7797186342833164,
+      2.8036119391260494,
+      5.27753793189231,
+      4.530297182398169,
+      7.046656606355389,
+      5.462623270030863,
+      6.955796859204016,
+      8.155890085446174
+    ],
+    "rmsd_top1": 7.606284894952186,
+    "rmsd_top3": 2.8036119391260494,
+    "rmsd_best_of_all": 2.8036119391260494,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

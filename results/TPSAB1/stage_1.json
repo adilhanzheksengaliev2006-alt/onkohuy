@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "TPSAB1",
+    "pdb_id": "2ZEC",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -8.156,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      1.2536079712143855,
+      2.499437755317903,
+      3.118175461080764,
+      8.367939882938813,
+      10.49453787418631,
+      5.479155287535934,
+      7.753717107974175,
+      9.312069520799973,
+      11.279070244618495
+    ],
+    "rmsd_top1": 1.2536079712143855,
+    "rmsd_top3": 1.2536079712143855,
+    "rmsd_best_of_all": 1.2536079712143855,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

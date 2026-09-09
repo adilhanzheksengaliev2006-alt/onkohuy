@@ -1,0 +1,25 @@
+{
+  "test05_redock": {
+    "gene": "tdk",
+    "pdb_id": "2B8T",
+    "ligand_chembl_id": "CHEMBL52609",
+    "status": "pass",
+    "docking_score_kcal_mol": -8.31,
+    "n_poses": 7,
+    "rmsd_per_pose": [
+      0.4835319805032079,
+      7.906253247102093,
+      5.708331313617379,
+      6.759794766981939,
+      7.095359560693131,
+      7.397763762467867,
+      10.57229797294124
+    ],
+    "rmsd_top1": 0.4835319805032079,
+    "rmsd_top3": 0.4835319805032079,
+    "rmsd_best_of_all": 0.4835319805032079,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

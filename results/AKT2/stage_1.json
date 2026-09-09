@@ -1,0 +1,23 @@
+{
+  "test05_redock": {
+    "gene": "AKT2",
+    "pdb_id": "3D0E",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -10.64,
+    "n_poses": 5,
+    "rmsd_per_pose": [
+      1.1363993488117736,
+      2.142387893528999,
+      6.334687579625081,
+      7.24054846880574,
+      6.869479565202631
+    ],
+    "rmsd_top1": 1.1363993488117736,
+    "rmsd_top3": 1.1363993488117736,
+    "rmsd_best_of_all": 1.1363993488117736,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

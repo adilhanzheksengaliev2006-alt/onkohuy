@@ -56,6 +56,15 @@ DUDE_DIR = os.path.join(BASE_DIR, "dude_datasets")
 TANIMOTO_MAX_SIMILARITY = 0.35  # как в DUD-E - декой не должен быть похож ни на один активный
 MW_TOLERANCE = 30.0
 LOGP_TOLERANCE = 1.0
+
+
+def _load_protocol_yaml():
+    import yaml
+    with open(os.path.join(BASE_DIR, "config", "protocol.yaml"), encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+CANDIDATES_PER_ACTIVE = _load_protocol_yaml().get("chembl_decoy_build", {}).get("candidates_per_active", 60)
 DOCK_TIMEOUT = 300  # было 120 - слишком часто спотыкались об таймаут на обычных (не самых крупных) молекулах при exhaustiveness=8
 EXHAUSTIVENESS = 8
 
@@ -213,7 +222,7 @@ def generate_decoys(actives, exclude_chembl_ids, target_ratio):
                     molecule_properties__full_mwt__range=(mw_lo, mw_hi),
                     molecule_properties__alogp__range=(logp_lo, logp_hi),
                     molecule_structures__isnull=False,
-                ).only(["molecule_chembl_id", "molecule_structures"])[:60]
+                ).only(["molecule_chembl_id", "molecule_structures"])[:CANDIDATES_PER_ACTIVE]
             )
         except Exception as e:
             print(f"  [warn] запрос декоев для активного #{i} упал: {str(e)[:150]}")

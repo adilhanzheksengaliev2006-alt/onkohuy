@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "AKT1",
+    "pdb_id": "3CQW",
+    "ligand_chembl_id": "CHEMBL259833",
+    "status": "fail",
+    "docking_score_kcal_mol": -7.499,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      3.823821353957316,
+      4.083813889386953,
+      8.395017164940555,
+      7.429618134644936,
+      9.943900908301854,
+      8.483174382701133,
+      9.220352164300202,
+      8.76259236216329,
+      7.593045196120452
+    ],
+    "rmsd_top1": 3.823821353957316,
+    "rmsd_top3": 3.823821353957316,
+    "rmsd_best_of_all": 3.823821353957316,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

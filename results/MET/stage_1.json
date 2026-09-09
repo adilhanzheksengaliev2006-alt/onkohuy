@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "MET",
+    "pdb_id": "3LQ8",
+    "ligand_chembl_id": "CHEMBL1230609",
+    "status": "fail",
+    "docking_score_kcal_mol": -10.49,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.191041564501176,
+      1.2518195429158108,
+      2.5656722684028948,
+      14.7036107708052,
+      1.3988744846895915,
+      14.065246449531013,
+      8.947595831560731,
+      9.37198617739756,
+      8.84916345299814
+    ],
+    "rmsd_top1": 2.191041564501176,
+    "rmsd_top3": 1.2518195429158108,
+    "rmsd_best_of_all": 1.2518195429158108,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

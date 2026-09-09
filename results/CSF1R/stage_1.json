@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "CSF1R",
+    "pdb_id": "3KRJ",
+    "ligand_chembl_id": "CHEMBL257154",
+    "status": "fail",
+    "docking_score_kcal_mol": -10.12,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.3904967497498193,
+      8.66769111552106,
+      8.85890773300986,
+      8.170430779352294,
+      9.20496672740375,
+      5.539302848627816,
+      6.297896861326853,
+      5.813066821174246,
+      8.651660368748937
+    ],
+    "rmsd_top1": 2.3904967497498193,
+    "rmsd_top3": 2.3904967497498193,
+    "rmsd_best_of_all": 2.3904967497498193,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

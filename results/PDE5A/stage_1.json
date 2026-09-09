@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PDE5A",
+    "pdb_id": "1UDT",
+    "ligand_chembl_id": "CHEMBL192",
+    "status": "pass",
+    "docking_score_kcal_mol": -9.896,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      1.3061956093968683,
+      3.3556801297012036,
+      8.820845352218907,
+      7.6627927356100125,
+      5.99723739796278,
+      6.275675504232116,
+      3.475364322315972,
+      3.0101726873207038,
+      8.975644340867865
+    ],
+    "rmsd_top1": 1.3061956093968683,
+    "rmsd_top3": 1.3061956093968683,
+    "rmsd_best_of_all": 1.3061956093968683,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

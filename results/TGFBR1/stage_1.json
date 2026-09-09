@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "TGFBR1",
+    "pdb_id": "3HMM",
+    "ligand_chembl_id": "CHEMBL570533",
+    "status": "pass",
+    "docking_score_kcal_mol": -11.03,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.3459714092749331,
+      5.934929630472633,
+      4.9356316299943,
+      5.177869455561807,
+      2.1661666090123557,
+      6.985444728848744,
+      6.850136673604121,
+      6.441896500281624,
+      6.457180870781008
+    ],
+    "rmsd_top1": 0.3459714092749331,
+    "rmsd_top3": 0.3459714092749331,
+    "rmsd_best_of_all": 0.3459714092749331,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

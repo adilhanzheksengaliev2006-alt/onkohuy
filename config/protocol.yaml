@@ -6,6 +6,11 @@
 gates:
   redock_rmsd_max: 2.0          # Test 5 - ЕДИНСТВЕННЫЙ гейт всего пайплайна
 
+chembl_decoy_build:
+  candidates_per_active: 150    # было 60; замерено эмпирически: 500 -> ~106с/активный
+                                 # (ChEMBL API пагинирует по 20-25), 150 -> ~15с/активный -
+                                 # разумный баланс размера пула и скорости на масштаб 11 мишеней
+
 flags:
   ligand_only_auc_warn: 0.75    # Test 2
   ave_bias_warn: 0.20           # Test 3

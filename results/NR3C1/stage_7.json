@@ -1,0 +1,22 @@
+{
+  "test17_pocket_descriptors": {
+    "gene": "NR3C1",
+    "cav_id": 1,
+    "dist_to_known_site": 0.7536127064543537,
+    "volume": 809.6459,
+    "drug_score": 0.9684,
+    "hydrophobicity_score": 55.3043,
+    "polarity_score": 7,
+    "flex": 0.0824,
+    "mean_asph_radius": 3.9012,
+    "as_density": 7.0252,
+    "a0_apol_surface": 166.5534,
+    "a0_pol_surface": 50.7127,
+    "af_apol_surface": 44.2588,
+    "af_pol_surface": 13.9119,
+    "apolar_residue_count": 18,
+    "polar_residue_count": 5,
+    "n_pockets_total": 20,
+    "residue_classification_note": "эвристическая (apolar={ala,val,leu,ile,met,phe,trp,pro,gly}, остальное=polar) - не единственно верная"
+  }
+}

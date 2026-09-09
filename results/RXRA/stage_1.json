@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "RXRA",
+    "pdb_id": "1MV9",
+    "ligand_chembl_id": "CHEMBL367149",
+    "status": "fail",
+    "docking_score_kcal_mol": -9.165,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.359634984021496,
+      1.47313834887169,
+      5.26927833741408,
+      2.8469931013319463,
+      4.4831055796757635,
+      2.227522058332968,
+      7.310867022130451,
+      2.5932792181806894,
+      7.83599339465288
+    ],
+    "rmsd_top1": 2.359634984021496,
+    "rmsd_top3": 1.47313834887169,
+    "rmsd_best_of_all": 1.47313834887169,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

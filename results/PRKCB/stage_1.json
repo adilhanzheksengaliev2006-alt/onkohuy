@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PRKCB",
+    "pdb_id": "2I0E",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -8.797,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      5.712075313777455,
+      6.282766063601491,
+      2.3548736555702967,
+      4.819421946206639,
+      6.299301998906265,
+      5.917868011780942,
+      5.52062885113313,
+      7.257361886361202,
+      7.406675285789748
+    ],
+    "rmsd_top1": 5.712075313777455,
+    "rmsd_top3": 2.3548736555702967,
+    "rmsd_best_of_all": 2.3548736555702967,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

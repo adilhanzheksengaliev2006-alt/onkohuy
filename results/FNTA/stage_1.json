@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "FNTA",
+    "pdb_id": "3E37",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -9.667,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      7.593799442966691,
+      7.826649792704111,
+      8.715967179626798,
+      8.566089869501909,
+      6.616003256847246,
+      8.69639693076572,
+      6.596094749118687,
+      8.338605691386428,
+      7.7453858658240815
+    ],
+    "rmsd_top1": 7.593799442966691,
+    "rmsd_top3": 7.593799442966691,
+    "rmsd_best_of_all": 6.596094749118687,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

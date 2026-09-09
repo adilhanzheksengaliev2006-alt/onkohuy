@@ -1,0 +1,19 @@
+{
+  "test05_redock": {
+    "gene": "NR3C1",
+    "pdb_id": "3BQD",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -13.05,
+    "n_poses": 1,
+    "rmsd_per_pose": [
+      0.5600724960582674
+    ],
+    "rmsd_top1": 0.5600724960582674,
+    "rmsd_top3": 0.5600724960582674,
+    "rmsd_best_of_all": 0.5600724960582674,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

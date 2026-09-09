@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "ADAM17",
+    "pdb_id": "2OI0",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -7.495,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      3.5217046758143753,
+      3.1701879040676397,
+      2.89812808229258,
+      2.236876407947588,
+      1.913320565402359,
+      1.6350179694695983,
+      6.097029576328305,
+      4.455767585639426,
+      7.352003876676165
+    ],
+    "rmsd_top1": 3.5217046758143753,
+    "rmsd_top3": 2.89812808229258,
+    "rmsd_best_of_all": 1.6350179694695983,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

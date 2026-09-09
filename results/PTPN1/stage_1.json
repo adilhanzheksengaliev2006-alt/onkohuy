@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PTPN1",
+    "pdb_id": "2AZR",
+    "ligand_chembl_id": "CHEMBL1230656",
+    "status": "pass",
+    "docking_score_kcal_mol": -6.885,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.7967711932803682,
+      3.840031790568217,
+      1.8532635413795393,
+      9.268209077618433,
+      8.952186506052158,
+      9.282785410363132,
+      8.276849906586643,
+      7.224811570982992,
+      5.038836855309211
+    ],
+    "rmsd_top1": 0.7967711932803682,
+    "rmsd_top3": 0.7967711932803682,
+    "rmsd_best_of_all": 0.7967711932803682,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

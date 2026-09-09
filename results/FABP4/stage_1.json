@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "FABP4",
+    "pdb_id": "2NNQ",
+    "ligand_chembl_id": "CHEMBL247920",
+    "status": "fail",
+    "docking_score_kcal_mol": -11.15,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.7641412501896045,
+      0.7136397149937325,
+      3.6468809505519473,
+      7.290520858126976,
+      4.134040766599824,
+      2.2537189007252265,
+      6.525306692319478,
+      6.057417479704288,
+      5.9340697913694465
+    ],
+    "rmsd_top1": 2.7641412501896045,
+    "rmsd_top3": 0.7136397149937325,
+    "rmsd_best_of_all": 0.7136397149937325,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

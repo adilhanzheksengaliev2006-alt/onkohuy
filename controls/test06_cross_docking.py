@@ -174,11 +174,7 @@ def run(gene, alt_specs, force=False):
             lig_atoms = superpose_and_transform_ligand(our_pdb_path, alt_pdb_path, spec["resname"])
             true_coords_mean = sum(a.get_coord() for a in lig_atoms) / len(lig_atoms)
 
-            nc = rr.get_chembl_new_client()
-            rec = nc.molecule.get(spec["chembl_id"])
-            smiles = rec.get("molecule_structures", {}).get("canonical_smiles")
-            if not smiles:
-                raise RuntimeError(f"не удалось получить SMILES для {spec['chembl_id']}")
+            smiles = protocol.fetch_ligand_smiles(spec.get("chembl_id"), spec.get("resname"))
 
             # ПРОВЕРЕННЫЙ путь построения референсной молекулы (перцепция
             # связей через MCS с эталонным SMILES) - тот же, что для родной

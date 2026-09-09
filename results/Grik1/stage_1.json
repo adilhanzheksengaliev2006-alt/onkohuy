@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "Grik1",
+    "pdb_id": "1VSO",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -7.001,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      1.1034525653573506,
+      4.83022540405061,
+      5.390298273896686,
+      5.794515087901372,
+      4.994654304462075,
+      4.85057546509378,
+      6.963648794157144,
+      5.2743625048769465,
+      3.7009544271827917
+    ],
+    "rmsd_top1": 1.1034525653573506,
+    "rmsd_top3": 1.1034525653573506,
+    "rmsd_best_of_all": 1.1034525653573506,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

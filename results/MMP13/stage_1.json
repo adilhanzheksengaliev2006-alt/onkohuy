@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "MMP13",
+    "pdb_id": "830C",
+    "ligand_chembl_id": "CHEMBL440498",
+    "status": "pass",
+    "docking_score_kcal_mol": -9.926,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      0.8104171809499776,
+      2.7256649611096915,
+      1.9040153058483913,
+      8.108991672093728,
+      5.121671912554803,
+      2.3023322615342097,
+      2.3511183095499883,
+      4.888642971533376,
+      9.896569460554499
+    ],
+    "rmsd_top1": 0.8104171809499776,
+    "rmsd_top3": 0.8104171809499776,
+    "rmsd_best_of_all": 0.8104171809499776,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

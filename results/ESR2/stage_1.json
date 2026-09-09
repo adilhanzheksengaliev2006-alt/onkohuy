@@ -1,0 +1,22 @@
+{
+  "test05_redock": {
+    "gene": "ESR2",
+    "pdb_id": "2FSZ",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -9.408,
+    "n_poses": 4,
+    "rmsd_per_pose": [
+      0.8306362790347849,
+      1.3178061616183192,
+      5.144266123587744,
+      6.755246155511786
+    ],
+    "rmsd_top1": 0.8306362790347849,
+    "rmsd_top3": 0.8306362790347849,
+    "rmsd_best_of_all": 0.8306362790347849,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

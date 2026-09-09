@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "MAPK14",
+    "pdb_id": "2QD9",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -9.936,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      1.4514580106955493,
+      1.6238437713539027,
+      6.233254293369048,
+      5.4974512588190585,
+      7.751681467285339,
+      3.9056924654453944,
+      10.282736099607622,
+      10.669521057649476,
+      6.390438689936394
+    ],
+    "rmsd_top1": 1.4514580106955493,
+    "rmsd_top3": 1.4514580106955493,
+    "rmsd_best_of_all": 1.4514580106955493,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

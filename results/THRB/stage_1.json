@@ -1,0 +1,24 @@
+{
+  "test05_redock": {
+    "gene": "THRB",
+    "pdb_id": "1Q4X",
+    "ligand_chembl_id": null,
+    "status": "pass",
+    "docking_score_kcal_mol": -12.6,
+    "n_poses": 6,
+    "rmsd_per_pose": [
+      0.8775686152344409,
+      0.8474792098543038,
+      1.9332480839425374,
+      1.9429904262834712,
+      9.02952655089633,
+      9.399549020098378
+    ],
+    "rmsd_top1": 0.8775686152344409,
+    "rmsd_top3": 0.8474792098543038,
+    "rmsd_best_of_all": 0.8474792098543038,
+    "threshold": 2.0,
+    "passed_gate": true,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

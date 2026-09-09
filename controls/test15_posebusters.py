@@ -48,9 +48,7 @@ def run(gene, force=False):
     if not os.path.exists(receptor_pdb):
         receptor_pdb = os.path.join(protocol.BASE_DIR, "structures", f"{pdb_id}.pdb")
 
-    nc = rr.get_chembl_new_client()
-    rec = nc.molecule.get(confirmed["ligand_chembl_id"])
-    smiles = rec.get("molecule_structures", {}).get("canonical_smiles")
+    smiles = protocol.fetch_ligand_smiles(confirmed.get("ligand_chembl_id"), confirmed.get("ligand_name"))
 
     from meeko import PDBQTMolecule, RDKitMolCreate
     from rdkit import Chem

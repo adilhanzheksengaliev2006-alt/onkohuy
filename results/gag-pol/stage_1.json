@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "gag-pol",
+    "pdb_id": "3NF7",
+    "ligand_chembl_id": null,
+    "status": "fail",
+    "docking_score_kcal_mol": -7.083,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      3.4136910177452604,
+      6.806600840988292,
+      4.526615615457178,
+      3.267544761886364,
+      8.416645725750353,
+      5.300386034001788,
+      7.102906331802878,
+      5.928753533971129,
+      7.286099443824856
+    ],
+    "rmsd_top1": 3.4136910177452604,
+    "rmsd_top3": 3.4136910177452604,
+    "rmsd_best_of_all": 3.267544761886364,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}

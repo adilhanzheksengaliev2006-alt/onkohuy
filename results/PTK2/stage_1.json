@@ -1,0 +1,27 @@
+{
+  "test05_redock": {
+    "gene": "PTK2",
+    "pdb_id": "3BZ3",
+    "ligand_chembl_id": "CHEMBL1084546",
+    "status": "fail",
+    "docking_score_kcal_mol": -10.46,
+    "n_poses": 9,
+    "rmsd_per_pose": [
+      2.4045802964927003,
+      1.4083091575489797,
+      2.9840009840563777,
+      8.415114222501686,
+      3.28649194522559,
+      9.158030422828904,
+      7.893619263786577,
+      8.107915585934212,
+      9.674005223409708
+    ],
+    "rmsd_top1": 2.4045802964927003,
+    "rmsd_top3": 1.4083091575489797,
+    "rmsd_best_of_all": 1.4083091575489797,
+    "threshold": 2.0,
+    "passed_gate": false,
+    "rmsd_method": "spyrmsd symmetry=True (graph isomorphism)"
+  }
+}
