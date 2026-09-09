@@ -1,4 +1,0 @@
-gene,bias_r2_vina_all_combined,pocket_volume,pocket_drug_score,pocket_hydrophobicity_score,pocket_polarity_score,pocket_flex,pocket_mean_asph_radius,pocket_as_density,pocket_apolar_residue_count,pocket_polar_residue_count,ave_bias,ligand_only_auc,cliffs_delta_heavy_atoms
-BRAF,0.07849203702176266,707.5843,0.7917,43.9048,6,0.4235,3.93,5.4497,13,8,0.6253134299969161,0.9480977443609023,0.19380451127819548
-CDK2,0.5888453437567551,759.405,0.0012,11.95,12,0.5287,4.2054,5.0048,8,12,0.2897906372304303,0.9945,0.459
-PIK3CA,0.03579146582646753,1018.4592,0.1417,29.0385,15,0.149,4.0092,6.5875,10,16,0.8190025509539799,0.9510195813639433,0.1061985145172181
